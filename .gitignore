@@ -35,3 +35,6 @@ build/
 
 ### Npm ###
 node_modules/
+
+### Test ###
+assets/
