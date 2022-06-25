@@ -37,5 +37,5 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
         
-      - name: Package with Gradle
-        run: ./gradlew package
+      - name: BootJar with Gradle
+        run: ./gradlew bootJar
