@@ -28,14 +28,16 @@ jobs:
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
         
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-        
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+        with: 
+          gradle-version: wrapper
+      
       - name: Test with Gradle
-        run: ./gradlew test
+        run: gradle test
         
       - name: Build with Gradle
-        run: ./gradlew build
+        run: gradle build
         
       - name: BootJar with Gradle
-        run: ./gradlew bootJar
+        run: gradle bootJar
