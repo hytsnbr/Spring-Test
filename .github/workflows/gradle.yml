@@ -32,10 +32,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with: 
           gradle-version: wrapper
-      
-      - name: Test with Gradle
-        run: gradle test
-        
+              
       - name: Build with Gradle
         run: gradle build
         
