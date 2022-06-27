@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head th:fragment="header(title, styles, scripts)">
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Page Title -->
+    <title th:replace="${title}">TITLE PLACEHOLDER</title>
+
+    <!-- CSS Framework -->
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+
+    <!-- Optional StyleSheets and Scripts -->
+    <th:block th:replace="${styles}"></th:block>
+    <th:block th:replace="${scripts}"></th:block>
+  </head>
+
+</html>

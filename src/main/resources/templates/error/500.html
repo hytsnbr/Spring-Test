@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head th:replace="common/header :: header(~{::title}, _, _)">
+    <title>500 Internal Server Error</title>
+  </head>
+
+  <body th:replace="common/body :: body(~{::main}, _)">
+    <main>
+      <h1>500 Internal Server Error</h1>
+      <details>
+        <summary>Detail</summary>
+        <p th:text="${exception}"></p>
+      </details>
+    </main>
+  </body>
+
+</html>

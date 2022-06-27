@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head th:replace="common/header :: header(~{::title}, _, _)">
+    <title>INDEX</title>
+  </head>
+
+  <body th:replace="common/body :: body(~{::main}, _)">
+    <main>
+      <ul>
+        <li>
+          <a th:href="@{/zipcode}">/zipcode</a>
+        </li>
+        <li>
+          <a th:href="@{/steam}">/steam</a>
+        </li>
+      </ul>
+    </main>
+  </body>
+
+</html>

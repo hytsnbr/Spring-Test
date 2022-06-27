@@ -1,0 +1,38 @@
+{
+  "groups": [
+    {
+      "name": "api.config",
+      "type": "com.hytsnbr.demo.property.ApiProperties",
+      "sourceType": "com.hytsnbr.demo.property.ApiProperties"
+    },
+    {
+      "name": "api.config.timeout",
+      "type": "com.hytsnbr.demo.property.ApiProperties$Timeout",
+      "sourceType": "com.hytsnbr.demo.property.ApiProperties",
+      "sourceMethod": "getTimeout()"
+    },
+    {
+      "name": "api.key",
+      "type": "com.hytsnbr.demo.property.ApiKey",
+      "sourceType": "com.hytsnbr.demo.property.ApiKey"
+    }
+  ],
+  "properties": [
+    {
+      "name": "api.config.timeout.connection",
+      "type": "java.lang.Long",
+      "sourceType": "com.hytsnbr.demo.property.ApiProperties$Timeout"
+    },
+    {
+      "name": "api.config.timeout.read",
+      "type": "java.lang.Long",
+      "sourceType": "com.hytsnbr.demo.property.ApiProperties$Timeout"
+    },
+    {
+      "name": "api.key.steam",
+      "type": "java.lang.String",
+      "sourceType": "com.hytsnbr.demo.property.ApiKey"
+    }
+  ],
+  "hints": []
+}

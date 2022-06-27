@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head th:replace="common/header :: header(~{::title}, _, _)">
+    <title>Steam Index</title>
+  </head>
+
+  <body th:replace="common/body :: body(~{::main}, _)">
+    <main class="container-md p-3">
+      <form class="row g-3 mb-3" th:action="@{/steam/search}" method="get">
+        <div class="col-6">
+          <input type="text" name="userName" th:value="${param.userName}"
+            class="form-control" placeholder="Steam User Name">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary">OK</button>
+        </div>
+      </form>
+
+      <div class="row row-cols-1 row-cols-md-2">
+        <th:block th:each="game, iter : ${games}">
+          <div class="card m-0" aria-hidden="true">
+            <div class="d-flex g-0 align-items-center justify-contents-between">
+              <a class="col-6"
+                th:href="@{https://store.steampowered.com/app/__${game.appId}__}"
+                target="_blank">
+                <img alt=""
+                  th:src="@{https://cdn.akamai.steamstatic.com/steam/apps/__${game.appId}__/header.jpg}"
+                  class="img-fluid rounded-start steam-header" loading="lazy">
+              </a>
+              <div class="col-6">
+                <div class="card-body py-3">
+                  <span class="card-text">App ID: [[${game.appId}]]</span>
+                  <span class="card-text">[[${game.name}]]</span>
+                  <span class="card-text">Play Time:
+                    [[${game.playtimeForever}]]</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </th:block>
+      </div>
+    </main>
+  </body>
+
+</html>
