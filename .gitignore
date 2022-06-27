@@ -1,7 +1,7 @@
 HELP.md
 bin/
 target/
-!.mvn/wrapper/maven-wrapper.jar
+.gradle
 !**/src/main/**/target/
 !**/src/test/**/target/
 
