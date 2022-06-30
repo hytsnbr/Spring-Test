@@ -38,6 +38,3 @@ node_modules/
 
 ### Test ###
 assets/
-
-### Spring ###
-src/main/resources/config/*.yml
