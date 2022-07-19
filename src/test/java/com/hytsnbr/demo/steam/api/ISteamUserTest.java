@@ -7,10 +7,10 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.hytsnbr.demo.property.ApiKey;
-import com.hytsnbr.demo.property.ApiProperties;
-import com.hytsnbr.demo.steam.repository.api.ISteamUser;
-import com.hytsnbr.demo.steam.repository.api.impl.ISteamUserImpl;
+import com.hytsnbr.demo.config.property.ApiKey;
+import com.hytsnbr.demo.config.property.ApiProperties;
+import com.hytsnbr.demo.app.steam.repository.api.ISteamUser;
+import com.hytsnbr.demo.app.steam.repository.api.impl.ISteamUserImpl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
