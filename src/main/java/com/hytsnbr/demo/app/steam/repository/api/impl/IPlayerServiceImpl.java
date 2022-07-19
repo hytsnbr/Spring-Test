@@ -3,14 +3,14 @@ package com.hytsnbr.demo.app.steam.repository.api.impl;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.hytsnbr.demo.app.steam.repository.api.IPlayerService;
 import org.springframework.stereotype.Repository;
 
+import com.hytsnbr.demo.app.steam.constant.SteamApiEndpoints;
+import com.hytsnbr.demo.app.steam.model.api.i_steam_user.OwnedGames;
+import com.hytsnbr.demo.app.steam.repository.api.IPlayerService;
 import com.hytsnbr.demo.config.property.ApiKey;
 import com.hytsnbr.demo.config.property.ApiProperties;
 import com.hytsnbr.demo.repository.ApiBaseLogic;
-import com.hytsnbr.demo.app.steam.constant.SteamApiEndpoints;
-import com.hytsnbr.demo.app.steam.model.api.i_steam_user.OwnedGames;
 
 @Repository
 public class IPlayerServiceImpl extends ApiBaseLogic implements IPlayerService {

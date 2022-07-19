@@ -1,13 +1,13 @@
 package com.hytsnbr.demo.app.todo.controller;
 
-import com.hytsnbr.demo.app.todo.dto.TodoInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.hytsnbr.demo.constant.URL;
+import com.hytsnbr.demo.app.todo.dto.TodoInfo;
 import com.hytsnbr.demo.app.todo.service.TodoService;
+import com.hytsnbr.demo.constant.URL;
 
 @Controller
 public class TodoDetailController {

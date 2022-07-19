@@ -1,6 +1,5 @@
 package com.hytsnbr.demo.app.todo.controller;
 
-import com.hytsnbr.demo.app.todo.dto.TodoInfo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.hytsnbr.demo.app.todo.dto.TodoInfo;
 import com.hytsnbr.demo.constant.URL;
 
 @Controller

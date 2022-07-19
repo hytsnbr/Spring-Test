@@ -4,9 +4,6 @@ import java.util.Objects;
 
 import javax.validation.constraints.Pattern;
 
-import com.hytsnbr.demo.app.zipcode.model.api.ZipcodeRequest;
-import com.hytsnbr.demo.app.zipcode.model.api.ZipcodeResponse;
-import com.hytsnbr.demo.app.zipcode.repository.ZipCodeApi;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.RequestEntity;
@@ -17,6 +14,9 @@ import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.hytsnbr.demo.app.zipcode.model.api.ZipcodeRequest;
+import com.hytsnbr.demo.app.zipcode.model.api.ZipcodeResponse;
+import com.hytsnbr.demo.app.zipcode.repository.ZipCodeApi;
 import com.hytsnbr.demo.config.property.ApiProperties;
 import com.hytsnbr.demo.constant.RegexPattern;
 import com.hytsnbr.demo.exception.api.ApiCallFailedException;

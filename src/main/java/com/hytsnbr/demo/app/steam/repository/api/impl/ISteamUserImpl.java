@@ -4,15 +4,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.hytsnbr.demo.app.steam.model.api.i_player_service.PlayerSummaries;
-import com.hytsnbr.demo.app.steam.model.api.i_steam_user.ResolveVanityURL;
 import org.springframework.stereotype.Repository;
 
+import com.hytsnbr.demo.app.steam.constant.SteamApiEndpoints;
+import com.hytsnbr.demo.app.steam.model.api.i_player_service.PlayerSummaries;
+import com.hytsnbr.demo.app.steam.model.api.i_steam_user.ResolveVanityURL;
+import com.hytsnbr.demo.app.steam.repository.api.ISteamUser;
 import com.hytsnbr.demo.config.property.ApiKey;
 import com.hytsnbr.demo.config.property.ApiProperties;
 import com.hytsnbr.demo.repository.ApiBaseLogic;
-import com.hytsnbr.demo.app.steam.constant.SteamApiEndpoints;
-import com.hytsnbr.demo.app.steam.repository.api.ISteamUser;
 
 @Repository
 public class ISteamUserImpl extends ApiBaseLogic implements ISteamUser {

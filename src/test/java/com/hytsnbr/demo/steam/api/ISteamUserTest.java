@@ -1,5 +1,7 @@
 package com.hytsnbr.demo.steam.api;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,12 +9,10 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.hytsnbr.demo.config.property.ApiKey;
-import com.hytsnbr.demo.config.property.ApiProperties;
 import com.hytsnbr.demo.app.steam.repository.api.ISteamUser;
 import com.hytsnbr.demo.app.steam.repository.api.impl.ISteamUserImpl;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.hytsnbr.demo.config.property.ApiKey;
+import com.hytsnbr.demo.config.property.ApiProperties;
 
 @SpringBootTest
 class ISteamUserTest {

@@ -1,11 +1,12 @@
 package com.hytsnbr.demo.app.zipcode.controller;
 
-import com.hytsnbr.demo.app.zipcode.repository.ZipCodeApi;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.hytsnbr.demo.app.zipcode.repository.ZipCodeApi;
 
 import lombok.extern.slf4j.Slf4j;
 

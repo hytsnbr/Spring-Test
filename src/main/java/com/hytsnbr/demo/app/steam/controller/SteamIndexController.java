@@ -2,14 +2,15 @@ package com.hytsnbr.demo.app.steam.controller;
 
 import java.util.List;
 
-import com.hytsnbr.demo.app.steam.model.api.i_steam_user.Game;
-import com.hytsnbr.demo.app.steam.service.SteamService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.hytsnbr.demo.app.steam.model.api.i_steam_user.Game;
+import com.hytsnbr.demo.app.steam.service.SteamService;
 
 import lombok.extern.slf4j.Slf4j;
 
