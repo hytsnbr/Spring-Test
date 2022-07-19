@@ -1,8 +1,9 @@
 package com.hytsnbr.demo.validator.impl;
 
+import java.util.Objects;
+
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
-import java.util.Objects;
 
 import com.hytsnbr.demo.validator.MaxDigits;
 

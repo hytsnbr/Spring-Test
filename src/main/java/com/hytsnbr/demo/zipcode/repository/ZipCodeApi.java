@@ -1,4 +1,4 @@
-package com.hytsnbr.demo.zipcode.service;
+package com.hytsnbr.demo.zipcode.repository;
 
 import org.springframework.web.client.RestClientException;
 

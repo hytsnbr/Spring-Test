@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/steam")
 public class SteamIndexController {
 
-    //===== View =====//
+    // ===== View =====//
     private static final String VIEW_INDEX = "steam/index";
 
     private final SteamService steamService;
