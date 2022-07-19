@@ -1,0 +1,23 @@
+$author: "hytsnbr10519";
+
+// bootstrap
+@import "bootstrap";
+
+// get font
+@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap");
+
+// variables
+$fontSize: 14px;
+
+// style
+:root {}
+
+body {
+  font-size: $fontSize;
+  font-family: "BIZ UDPGothic", sans-serif;
+}
+
+img.steam-header {
+  width: 200px;
+  height: auto;
+}

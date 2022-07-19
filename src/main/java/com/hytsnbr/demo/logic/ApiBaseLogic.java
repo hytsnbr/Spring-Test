@@ -1,7 +1,5 @@
 package com.hytsnbr.demo.logic;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.Map;
@@ -13,6 +11,8 @@ import org.springframework.web.client.RestTemplate;
 import com.hytsnbr.demo.exception.api.ApiCallFailedException;
 import com.hytsnbr.demo.property.ApiProperties;
 import com.hytsnbr.demo.property.ApiProperties.Timeout;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * API関連 基底クラス

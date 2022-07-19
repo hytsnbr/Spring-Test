@@ -1,8 +1,8 @@
 package com.hytsnbr.demo.steam.model.api.i_steam_user;
 
-import lombok.Data;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
 
 @Data
 public class ResolveVanityURL {

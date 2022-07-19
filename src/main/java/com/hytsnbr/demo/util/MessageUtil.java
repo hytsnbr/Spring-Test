@@ -10,6 +10,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public final class MessageUtil {
 
+    private MessageUtil() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static String getMessage(MessageSource messageSource, final String key) {
         return messageSource.getMessage(key, new String[] {}, Locale.getDefault());
     }

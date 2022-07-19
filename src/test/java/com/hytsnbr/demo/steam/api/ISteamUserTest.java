@@ -17,31 +17,31 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 class ISteamUserTest {
 
-	@Autowired
-	ApiProperties apiProperties;
+    @Autowired
+    ApiProperties apiProperties;
 
-	@Autowired
-	ApiKey apiKey;
+    @Autowired
+    ApiKey apiKey;
 
-	private ISteamUser iSteamUser;
+    private ISteamUser iSteamUser;
 
-	@BeforeEach
-	public void setup() {
-		MockitoAnnotations.openMocks(this);
+    @BeforeEach
+    public void setup() {
+        MockitoAnnotations.openMocks(this);
 
-		this.iSteamUser = new ISteamUserImpl(apiProperties, apiKey);
-	}
+        this.iSteamUser = new ISteamUserImpl(apiProperties, apiKey);
+    }
 
-	@Test
-	@DisplayName("SteamIDを取得")
-	void SteamIDを取得() {
-		String expected = "76561198795659001";
-		String actual = iSteamUser.resolveVanityURL("hytsnbr10519").getResponse().getSteamId();
+    @Test
+    @DisplayName("SteamIDを取得")
+    void SteamIDを取得() {
+        String expected = "76561198795659001";
+        String actual = iSteamUser.resolveVanityURL("hytsnbr10519").getResponse().getSteamId();
 
-		assertEquals(expected, actual);
-	}
+        assertEquals(expected, actual);
+    }
 
-	@Test
-	void test() {
-	}
+    @Test
+    void test() {
+    }
 }

@@ -1,4 +1,4 @@
-package com.hytsnbr.demo.zipcode.service.impl;
+package com.hytsnbr.demo.zipcode.repository.impl;
 
 import java.util.Objects;
 
@@ -22,7 +22,7 @@ import com.hytsnbr.demo.logic.ApiBaseLogic;
 import com.hytsnbr.demo.property.ApiProperties;
 import com.hytsnbr.demo.zipcode.model.api.ZipcodeRequest;
 import com.hytsnbr.demo.zipcode.model.api.ZipcodeResponse;
-import com.hytsnbr.demo.zipcode.service.ZipCodeApi;
+import com.hytsnbr.demo.zipcode.repository.ZipCodeApi;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -69,51 +69,51 @@ public class ZipCodeApiImpl extends ApiBaseLogic implements ZipCodeApi {
     // @Override
     // public List<String> getAddresses(int[] zipcodes) throws Exception {
 
-    //   if (zipcodes.length > SEARCH_LIMIT) {
-    //     throw new CollectionOversizeException();
-    //   }
+    // if (zipcodes.length > SEARCH_LIMIT) {
+    // throw new CollectionOversizeException();
+    // }
 
-    //   List<ApiRequest> requestList = Arrays.asList(zipcodes)
-    //       .stream()
-    //       .map(zipcode -> {
-    //         return new ApiRequest(zipcode);
-    //       })
-    //       .collection(Collectors.toList());
+    // List<ApiRequest> requestList = Arrays.asList(zipcodes)
+    // .stream()
+    // .map(zipcode -> {
+    // return new ApiRequest(zipcode);
+    // })
+    // .collection(Collectors.toList());
 
-    //   for (ApiRequest request : requestList) {
+    // for (ApiRequest request : requestList) {
 
-    //   }
+    // }
     // }
 
     // @Override
     // public List<String> getAddresses(List<Integer> zipcodes) throws Exception {
 
-    //   if (zipcodes.size() > SEARCH_LIMIT) {
-    //     throw new CollectionOversizeException();
-    //   }
+    // if (zipcodes.size() > SEARCH_LIMIT) {
+    // throw new CollectionOversizeException();
+    // }
 
-    //   List<ApiRequest> requestList = zipcodes
-    //       .stream()
-    //       .map(zipcode -> {
-    //         return new ApiRequest(zipcode);
-    //       })
-    //       .collection(Collectors.toList());
+    // List<ApiRequest> requestList = zipcodes
+    // .stream()
+    // .map(zipcode -> {
+    // return new ApiRequest(zipcode);
+    // })
+    // .collection(Collectors.toList());
     // }
 
     // @Override
     // public List<String> getAddresses(List<String> zipcodes) throws Exception {
 
-    //   if (zipcodes.size() > SEARCH_LIMIT) {
-    //     throw new CollectionOversizeException();
-    //   }
+    // if (zipcodes.size() > SEARCH_LIMIT) {
+    // throw new CollectionOversizeException();
+    // }
 
-    //   // リクエスト作成
-    //   List<ApiRequest> requestList = zipcodes
-    //       .stream()
-    //       .map(zipcode -> {
-    //         return new ApiRequest(zipcode);
-    //       })
-    //       .collection(Collectors.toList());
+    // // リクエスト作成
+    // List<ApiRequest> requestList = zipcodes
+    // .stream()
+    // .map(zipcode -> {
+    // return new ApiRequest(zipcode);
+    // })
+    // .collection(Collectors.toList());
     // }
 
     /**

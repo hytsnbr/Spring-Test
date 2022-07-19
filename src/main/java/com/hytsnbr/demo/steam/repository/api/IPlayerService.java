@@ -10,5 +10,5 @@ public interface IPlayerService {
 
     OwnedGames clientGetLastPlayedTimes();
 
-    //	void getRecentlyPlayedGames(String steamId);
+    // void getRecentlyPlayedGames(String steamId);
 }

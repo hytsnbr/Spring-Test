@@ -9,10 +9,14 @@ public final class SteamApiUtil {
     static ObjectMapper mapper;
 
     /*
-      static イニシャライザ
+     * static イニシャライザ
      */
     static {
         mapper = new ObjectMapper();
+    }
+
+    private SteamApiUtil() {
+        throw new IllegalStateException("Utility class");
     }
 
     /**

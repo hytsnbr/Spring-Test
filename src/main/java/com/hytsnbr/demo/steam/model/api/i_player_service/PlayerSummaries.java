@@ -1,10 +1,10 @@
 package com.hytsnbr.demo.steam.model.api.i_player_service;
 
-import lombok.Data;
-
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
 
 @Data
 public class PlayerSummaries {

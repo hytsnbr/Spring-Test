@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Steam Index</title>
+
+  <link rel="stylesheet" href="/cdn_modules/bootstrap@5.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <main class="container-fluid py-3 px-4">
+    <form class="row mb-3">
+      <div class="col-6 col-md-3">
+        <input type="text" class="form-control" placeholder="Steam User Name">
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary">
+          Search
+        </button>
+      </div>
+    </form>
+
+    <div class="row row-cols-1 row-cols-md-2">
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mw-50" aria-hidden="true">
+        <div class="overlay"></div>
+        <div class="d-flex g-0 align-items-center justify-contents-between">
+          <a class="col-6 steam-game-header" href="/">
+            <img alt="" src="https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg" class="img-fluid rounded steam-header" loading="lazy">
+          </a>
+          <div class="col-6">
+            <div class="card-body py-3">
+              <p class="card-title">[[Game Name]]</p>
+              <p class="card-text mb-0">Play Time: [[00:00:00:00:00]]</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script defer type="text/javascript" src="/cdn_modules/bootstrap@5.1.3/js/bootstrap.bundle.min.js"></script>
+  <script defer type="text/javascript" src="/dist/js/vendor.js"></script>
+</body>
+
+</html>

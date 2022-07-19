@@ -13,7 +13,9 @@ public interface TodoInfoDao {
      * 検索
      *
      * @param conditions
+     *
      * @return List of TodoInfo
+     *
      * @throws DataAccessException
      */
     List<TodoInfo> search(TodoSearchCondition conditions) throws DataAccessException;

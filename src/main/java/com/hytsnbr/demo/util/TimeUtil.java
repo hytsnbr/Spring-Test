@@ -6,6 +6,10 @@ import java.util.Calendar;
 
 public final class TimeUtil {
 
+    private TimeUtil() {
+        throw new IllegalStateException("Utility class");
+    }
+
     /**
      * システム日付から年度を取得
      */
@@ -22,8 +26,8 @@ public final class TimeUtil {
 
         Month month = Month.of(calendar.get(Calendar.MONTH));
         return switch (month) {
-        case JANUARY, FEBRUARY, MARCH -> calendar.get(Calendar.YEAR) - 1;
-        default -> calendar.get(Calendar.YEAR);
+            case JANUARY, FEBRUARY, MARCH -> calendar.get(Calendar.YEAR) - 1;
+            default -> calendar.get(Calendar.YEAR);
         };
     }
 

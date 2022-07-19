@@ -13,6 +13,10 @@ import com.hytsnbr.demo.util.date.converter.UtilDateConverter;
 
 public final class DateUtil {
 
+    private DateUtil() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static DateConverter<java.util.Date> utilDate() {
         return new UtilDateConverter();
     }
