@@ -3,18 +3,17 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-// プロダクション環境か
-const isProduction = process.env.NODE_ENV === "production";
-// ソースマップの利用有無(開発時はソースマップを利用しない)
-const enabledSourceMap = isProduction;
-// ソースマップが有効の場合は出力する
-const sourceMapMode = enabledSourceMap ? "source-map" : "eval";
-
 // 出力先パス
 const outputPath = path.resolve(__dirname, "dist");
 
 // 以下設定
-module.exports = {
+module.exports = (env, argv) => {
+  // プロダクション環境か
+  const isProduction = process.env.NODE_ENV === "production";
+  // ソースマップの利用有無(開発時はソースマップを利用しない)
+  const enabledSourceMap = isProduction;
+  // ソースマップが有効の場合は出力する
+  const sourceMapMode = enabledSourceMap ? "source-map" : "eval";
 
   // エントリポイント
   // 単一ファイル指定
