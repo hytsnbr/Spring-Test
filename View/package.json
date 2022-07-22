@@ -7,7 +7,7 @@
     "server": "SET NODE_ENV=development&& webpack-dev-server --mode development"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.10",
+    "@babel/core": "^7.18.9",
     "@babel/preset-env": "^7.18.9",
     "autoprefixer": "10.4.7",
     "babel-eslint": "^10.1.0",
