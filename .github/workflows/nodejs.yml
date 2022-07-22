@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   build:
-    
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +18,4 @@ jobs:
         working-directory: ./View
 
       - run: npm run build --if-present
-        working-directory: ./View
-
-      - run: npm test
         working-directory: ./View
