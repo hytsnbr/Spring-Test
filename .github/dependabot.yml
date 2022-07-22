@@ -13,6 +13,7 @@ updates:
       - "hytsnbr"
     reviewers:
       - "hytsnbr"
+    open-pull-requests-limit: 99
 
   - package-ecosystem: "npm"
     directory: "/View"
@@ -22,3 +23,4 @@ updates:
       - "hytsnbr"
     reviewers:
       - "hytsnbr"
+    open-pull-requests-limit: 99
