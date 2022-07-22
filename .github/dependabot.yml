@@ -9,5 +9,18 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-    assignees: 
-      - "hytsnbr10519"
+    assignees:
+      - "hytsnbr"
+    reviewers:
+      - "hytsnbr"
+    open-pull-requests-limit: 99
+
+  - package-ecosystem: "npm"
+    directory: "/View"
+    schedule:
+      interval: "daily"
+    assignees:
+      - "hytsnbr"
+    reviewers:
+      - "hytsnbr"
+    open-pull-requests-limit: 99
