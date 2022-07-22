@@ -1,10 +1,10 @@
 {
   "private": "true",
   "scripts": {
-    "dev": "SET NODE_ENV=development&& webpack --mode development",
-    "build": "SET NODE_ENV=production&& webpack --mode production",
-    "watch": "SET NODE_ENV=development&& webpack --mode development --watch",
-    "server": "SET NODE_ENV=development&& webpack-dev-server --mode development"
+    "dev": "cross-env NODE_ENV=dev webpack --mode development",
+    "build": "cross-env NODE_ENV=prod webpack --mode production",
+    "watch": "cross-env NODE_ENV=dev webpack --mode development --watch",
+    "server": "cross-env NODE_ENV=dev webpack-dev-server --mode development"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
@@ -12,8 +12,10 @@
     "autoprefixer": "10.4.7",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.5",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
+    "dotenv-webpack": "^8.0.0",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss": "^8.4.14",
     "postcss-loader": "^7.0.1",

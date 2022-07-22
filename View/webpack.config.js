@@ -2,20 +2,19 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const Dotenv = require('dotenv-webpack');
 
+// 出力先パス
+const outputPath = path.resolve(__dirname, "dist");
 // プロダクション環境か
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = process.env.NODE_ENV === "prod";
 // ソースマップの利用有無(開発時はソースマップを利用しない)
 const enabledSourceMap = isProduction;
 // ソースマップが有効の場合は出力する
 const sourceMapMode = enabledSourceMap ? "source-map" : "eval";
 
-// 出力先パス
-const outputPath = path.resolve(__dirname, "dist");
-
 // 以下設定
 module.exports = {
-
   // エントリポイント
   // 単一ファイル指定
   // entry: "./src/index.js",
@@ -146,6 +145,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       // 出力時のファイル名
       filename: "css/style.css",
+    }),
+    // .env読み込みプラグイン
+    new Dotenv({
+      path: path.resolve(__dirname, `.env.${process.env.NODE_ENV}`),
     }),
   ],
 
