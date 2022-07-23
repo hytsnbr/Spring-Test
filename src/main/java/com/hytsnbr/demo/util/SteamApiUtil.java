@@ -20,10 +20,11 @@ public final class SteamApiUtil {
     }
 
     /**
-     *
+     * 
      */
     public static <T> T getResponse(String rawResponse, Class<T> responseType) throws JsonProcessingException {
 
+        // Steam API のレスポンスは共通して "response" の中に入っている
         JsonNode jsonNode = mapper.readTree(rawResponse);
         T result = mapper.readValue(jsonNode.get("response")
                 .toString(), responseType);

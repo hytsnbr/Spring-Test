@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.Objects;
 
 public class TimestampConverter extends DateConverter<Timestamp> {
@@ -37,7 +36,7 @@ public class TimestampConverter extends DateConverter<Timestamp> {
     }
 
     @Override
-    public Date toUtilDate(Timestamp target) {
+    public java.util.Date toUtilDate(Timestamp target) {
         return new java.util.Date(target.getTime());
     }
 

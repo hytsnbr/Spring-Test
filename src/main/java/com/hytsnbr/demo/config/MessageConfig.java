@@ -12,7 +12,7 @@ public class MessageConfig implements WebMvcConfigurer {
     /**
      * バリデーションメッセージを Hibernate Validator のデフォルトから
      * Spring の MessageSource (message.properties) に変更する
-     *
+     * 
      * @return localValidatorFactoryBean
      */
     @Bean
