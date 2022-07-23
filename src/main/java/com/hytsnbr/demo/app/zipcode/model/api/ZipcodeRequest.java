@@ -12,10 +12,10 @@ import lombok.Getter;
 @Builder
 public class ZipcodeRequest {
 
-    @NotNull
-    @Pattern(regexp = RegexPattern.ZIPCODE)
-    String zipcode;
+  @NotNull
+  @Pattern(regexp = RegexPattern.ZIPCODE)
+  String zipcode;
 
-    @Builder.Default
-    int limit = 20; // API側で定めているデフォルト値
+  @Builder.Default
+  int limit = 20; // API側で定めているデフォルト値
 }

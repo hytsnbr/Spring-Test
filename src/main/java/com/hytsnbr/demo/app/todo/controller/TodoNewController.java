@@ -15,60 +15,60 @@ import com.hytsnbr.demo.constant.URL;
 @Controller
 public class TodoNewController {
 
-    @GetMapping(URL.URL_TODO_NEW)
-    public String index(Model model) throws Exception {
+  @GetMapping(URL.URL_TODO_NEW)
+  public String index(Model model) throws Exception {
 
-        return "todo/new";
+    return "todo/new";
+  }
+
+  @PostMapping(URL.URL_TODO_NEW)
+  public String validate(
+      @Validated @ModelAttribute("todoInfo") TodoInfo todoInfo,
+      BindingResult errors,
+      Model model) throws Exception {
+
+    if (errors.hasErrors()) {
+      return "todo/new";
     }
 
-    @PostMapping(URL.URL_TODO_NEW)
-    public String validate(
-            @Validated @ModelAttribute("todoInfo") TodoInfo todoInfo,
-            BindingResult errors,
-            Model model) throws Exception {
+    model.addAttribute("todoInfo", todoInfo);
 
-        if (errors.hasErrors()) {
-            return "todo/new";
-        }
+    return "redirect:new/confirm";
+  }
 
-        model.addAttribute("todoInfo", todoInfo);
+  @PostMapping(URL.URL_TODO_NEW_CONFIRM)
+  public String confirm(
+      @Validated @ModelAttribute("todoInfo") TodoInfo todoInfo,
+      BindingResult errors,
+      Model model,
+      RedirectAttributes redirectAttributes) throws Exception {
 
-        return "redirect:new/confirm";
+    if (errors.hasErrors()) {
+      redirectAttributes.addFlashAttribute("todoInfo", todoInfo);
+
+      return "redirect:new";
     }
 
-    @PostMapping(URL.URL_TODO_NEW_CONFIRM)
-    public String confirm(
-            @Validated @ModelAttribute("todoInfo") TodoInfo todoInfo,
-            BindingResult errors,
-            Model model,
-            RedirectAttributes redirectAttributes) throws Exception {
+    model.addAttribute("todoInfo", todoInfo);
 
-        if (errors.hasErrors()) {
-            redirectAttributes.addFlashAttribute("todoInfo", todoInfo);
+    return "todo/new/confirm";
+  }
 
-            return "redirect:new";
-        }
+  @PostMapping(value = URL.URL_TODO_NEW_CONFIRM, params = "enter")
+  public String confirmEnter(
+      @Validated @ModelAttribute("todoInfo") TodoInfo todoInfo,
+      BindingResult errors,
+      Model model,
+      RedirectAttributes redirectAttributes) throws Exception {
 
-        model.addAttribute("todoInfo", todoInfo);
+    if (errors.hasErrors()) {
+      redirectAttributes.addFlashAttribute("todoInfo", todoInfo);
 
-        return "todo/new/confirm";
+      return "redirect:new/confirm";
     }
 
-    @PostMapping(value = URL.URL_TODO_NEW_CONFIRM, params = "enter")
-    public String confirmEnter(
-            @Validated @ModelAttribute("todoInfo") TodoInfo todoInfo,
-            BindingResult errors,
-            Model model,
-            RedirectAttributes redirectAttributes) throws Exception {
+    model.addAttribute("todoInfo", todoInfo);
 
-        if (errors.hasErrors()) {
-            redirectAttributes.addFlashAttribute("todoInfo", todoInfo);
-
-            return "redirect:new/confirm";
-        }
-
-        model.addAttribute("todoInfo", todoInfo);
-
-        return "todo/new/confirm";
-    }
+    return "todo/new/confirm";
+  }
 }
