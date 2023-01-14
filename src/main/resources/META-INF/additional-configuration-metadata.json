@@ -1,0 +1,38 @@
+{
+  "groups": [
+    {
+      "name": "api.config",
+      "type": "com.hytsnbr.spring_test.property.ApiProperties",
+      "sourceType": "com.hytsnbr.spring_test.property.ApiProperties"
+    },
+    {
+      "name": "api.config.timeout",
+      "type": "com.hytsnbr.spring_test.property.ApiProperties$Timeout",
+      "sourceType": "com.hytsnbr.spring_test.property.ApiProperties",
+      "sourceMethod": "getTimeout()"
+    },
+    {
+      "name": "api.key",
+      "type": "com.hytsnbr.spring_test.property.ApiKey",
+      "sourceType": "com.hytsnbr.spring_test.property.ApiKey"
+    }
+  ],
+  "properties": [
+    {
+      "name": "api.config.timeout.connection",
+      "type": "java.lang.Long",
+      "sourceType": "com.hytsnbr.spring_test.property.ApiProperties$Timeout"
+    },
+    {
+      "name": "api.config.timeout.read",
+      "type": "java.lang.Long",
+      "sourceType": "com.hytsnbr.spring_test.property.ApiProperties$Timeout"
+    },
+    {
+      "name": "api.key.steam",
+      "type": "java.lang.String",
+      "sourceType": "com.hytsnbr.spring_test.property.ApiKey"
+    }
+  ],
+  "hints": []
+}
