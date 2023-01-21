@@ -1,15 +1,21 @@
 package com.hytsnbr.spring_test.app.todo.service.impl;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
+import jakarta.transaction.Transactional;
+
 import java.util.List;
 import java.util.Objects;
 
-import org.springframework.core.convert.ConversionService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.hytsnbr.spring_test.app.todo.dao.jpa.TodoInfoRepository;
+import com.hytsnbr.spring_test.app.todo.dao.jpa.TodoInfoSpecification;
+import com.hytsnbr.spring_test.app.todo.dto.TodoInfoRequest;
 import com.hytsnbr.spring_test.app.todo.dto.TodoInfoResponse;
+import com.hytsnbr.spring_test.app.todo.dto.TodoInfoSearchCondition;
 import com.hytsnbr.spring_test.app.todo.dto.entity.TodoInfoEntity;
 import com.hytsnbr.spring_test.app.todo.service.TodoService;
 import com.hytsnbr.spring_test.exception.common.SystemException;
@@ -19,20 +25,23 @@ public class TodoServiceImpl implements TodoService {
     
     private final TodoInfoRepository repository;
     
-    private final ConversionService conversionService;
-    
-    public TodoServiceImpl(TodoInfoRepository repository, ConversionService conversionService) {
+    public TodoServiceImpl(TodoInfoRepository repository) {
         this.repository = repository;
-        this.conversionService = conversionService;
     }
     
     private TodoInfoResponse todoEntity2Response(TodoInfoEntity entity) {
-        return conversionService.convert(entity, TodoInfoResponse.class);
+        return new TodoInfoResponse(
+            entity.getId(),
+            entity.getProcess(),
+            entity.getText(),
+            entity.getCreateAt(),
+            entity.getUpdateAt()
+        );
     }
     
     private List<TodoInfoResponse> todoEntity2Response(List<TodoInfoEntity> entities) {
         return entities.stream()
-                       .map(entity -> conversionService.convert(entity, TodoInfoResponse.class))
+                       .map(this::todoEntity2Response)
                        .toList();
     }
     
@@ -44,41 +53,65 @@ public class TodoServiceImpl implements TodoService {
     }
     
     @Override
-    public List<TodoInfoResponse> getTodoList() {
-        return this.todoEntity2Response(repository.findAll());
+    public Page<TodoInfoResponse> search(TodoInfoSearchCondition condition, Pageable pageable) {
+        var spec = new TodoInfoSpecification();
+        
+        var searchResult = repository.findAll(
+            Specification.where(spec.idEqual(condition.id()))
+                         .or(spec.processEqual(condition.process()))
+                         .or(spec.textContain(condition.text())),
+            pageable
+        );
+        var contents = this.todoEntity2Response(searchResult.getContent());
+        
+        return new PageImpl<>(contents, searchResult.getPageable(), searchResult.getTotalElements());
     }
     
     @Override
-    public boolean registerTodo(TodoInfoEntity todoInfoEntity) {
+    public List<TodoInfoResponse> getTodoList(Pageable pageable) {
+        var result = repository.findAll(pageable);
         
-        // Null Check
-        Objects.requireNonNull(todoInfoEntity);
-        
-        LocalDateTime insertAt = LocalDateTime.now();
-        
-        todoInfoEntity.setCreateAt(Timestamp.valueOf(insertAt));
-        todoInfoEntity.setUpdateAt(Timestamp.valueOf(insertAt));
-        TodoInfoEntity result = repository.save(todoInfoEntity);
-        
-        return Objects.nonNull(result);
+        return this.todoEntity2Response(result.getContent());
     }
     
+    @Transactional
     @Override
-    public boolean updateTodo(TodoInfoEntity todoInfoEntity) {
+    public TodoInfoResponse create(TodoInfoRequest request) {
+        var entity = new TodoInfoEntity();
+        entity.setProcess(request.process());
+        entity.setText(request.text());
         
-        // Null Check
-        Objects.requireNonNull(todoInfoEntity);
+        var result = repository.saveAndFlush(entity);
+        return this.todoEntity2Response(result);
+    }
+    
+    @Transactional
+    @Override
+    public TodoInfoResponse update(long id, TodoInfoRequest request) {
+        var entity = repository.findById(id).orElseThrow(SystemException::new);
+        entity.setProcess(Objects.nonNull(request.process()) ? request.process() : entity.getProcess());
+        entity.setText(Objects.nonNull(request.text()) ? request.text() : entity.getText());
         
-        LocalDateTime updateAt = LocalDateTime.now();
+        var result = repository.saveAndFlush(entity);
+        return this.todoEntity2Response(result);
+    }
+    
+    @Transactional
+    @Override
+    public TodoInfoResponse upsert(long id, TodoInfoRequest request) {
+        var entity = repository.findById(id).orElse(new TodoInfoEntity());
+        entity.setProcess(request.process());
+        entity.setText(request.text());
         
-        // Is Exist?
-        if (repository.existsById(todoInfoEntity.getId())) {
-            todoInfoEntity.setUpdateAt(Timestamp.valueOf(updateAt));
-            TodoInfoEntity result = repository.save(todoInfoEntity);
-            
-            return Objects.nonNull(result);
-        }
+        var result = repository.saveAndFlush(entity);
+        return this.todoEntity2Response(result);
+    }
+    
+    @Transactional
+    @Override
+    public void delete(long id) {
+        var entity = repository.findById(id).orElseThrow(SystemException::new);
         
-        throw new NullPointerException(""); // TODO: メッセージ設定
+        repository.delete(entity);
     }
 }

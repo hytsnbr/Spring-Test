@@ -1,32 +1,58 @@
 package com.hytsnbr.spring_test.app.todo.dto.entity;
 
-import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
+import jakarta.persistence.Table;
+import lombok.Getter;
 
 import java.sql.Timestamp;
+import java.time.Instant;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
-
-@Data
-@Table("todo_data")
+@Getter
+@Entity
+@Table(name = "todo_data")
 public class TodoInfoEntity {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private long id;
     
-    @Column
-    @NotNull
+    @Column(name = "process", nullable = false)
     private Integer process;
     
-    @Column
-    @NotNull
+    @Column(name = "text", nullable = false)
     private String text;
     
-    @Column
+    @Column(name = "create_at", updatable = false)
     private Timestamp createAt;
     
-    @Column
+    @Column(name = "update_at")
     private Timestamp updateAt;
+    
+    public void setProcess(Integer process) {
+        this.process = process;
+    }
+    
+    public void setText(String text) {
+        this.text = text;
+    }
+    
+    @PrePersist
+    public void onPrePersist() {
+        final var timestamp = Timestamp.from(Instant.now());
+        createAt = timestamp;
+        updateAt = timestamp;
+    }
+    
+    @PreUpdate
+    public void onPreUpdate() {
+        final var timestamp = Timestamp.from(Instant.now());
+        updateAt = timestamp;
+    }
 }

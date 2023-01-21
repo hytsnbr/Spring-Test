@@ -24,33 +24,51 @@ repositories {
 }
 
 dependencies {
+    // Apache Commons
     implementation 'org.apache.commons:commons-lang3:3.12.0'
     implementation 'org.apache.commons:commons-collections4:4.4'
 
+    // Spring Boot Starter
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
-    // implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
+    // Spring Boot Devtools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Spring Boot Configuration Processor
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+    // SendGrid
+    implementation 'com.sendgrid:sendgrid-java:4.9.3'
+
+    // Hibernate
+    annotationProcessor 'org.hibernate.orm:hibernate-jpamodelgen:6.1.6.Final'
+
+    // Lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-
+    // H2 Database
     runtimeOnly 'com.h2database:h2'
 
-    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-
+    // Unit Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
-    // testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'generated/sources/annotationProcessor/java/main/'
+        }
+    }
 }
 
 sonar {

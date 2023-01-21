@@ -7,7 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum Processing {
     
-    NOTYETSTARTED(1, "未着手"), // 未着手
+    NOT_YET_STARTED(1, "未着手"), // 未着手
     PROCESSING(2, "作業中"), // 作業中
     COMPLETE(3, "完了"); // 完了
     
