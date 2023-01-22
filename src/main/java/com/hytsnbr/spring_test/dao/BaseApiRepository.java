@@ -8,8 +8,17 @@ import java.util.Objects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.http.*;
-import org.springframework.web.client.*;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.RequestEntity;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpServerErrorException;
+import org.springframework.web.client.ResourceAccessException;
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.UnknownHttpStatusCodeException;
 
 import com.hytsnbr.spring_test.config.property.ApiProperties;
 import com.hytsnbr.spring_test.exception.api.ApiCallFailedException;
@@ -239,6 +248,7 @@ public class BaseApiRepository {
         logger.info("RequestEntity: {}", requestEntity);
         logger.info("ResponseType: {}", responseType);
         
+        // TODO: APIエラーの種別ごとにメッセージを設定する
         try {
             return this.restTemplate().exchange(requestEntity, responseType);
         } catch (HttpClientErrorException e) {
