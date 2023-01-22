@@ -1,6 +1,6 @@
 package com.hytsnbr.spring_test.app.steam.dao;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -14,6 +14,8 @@ import com.hytsnbr.spring_test.config.property.ApiProperties;
 @SpringBootTest
 public class IPlayerServiceTest {
     
+    private static AutoCloseable closeable;
+    
     @Autowired
     ApiProperties apiProperties;
     
@@ -22,8 +24,6 @@ public class IPlayerServiceTest {
     
     private PlayerServiceRepository playerServiceRepository;
     
-    private AutoCloseable closeable;
-    
     @BeforeEach
     public void setup() {
         closeable = MockitoAnnotations.openMocks(this);
@@ -31,7 +31,7 @@ public class IPlayerServiceTest {
         this.playerServiceRepository = new PlayerServiceRepository(apiProperties, apiKey);
     }
     
-    @BeforeAll
+    @AfterEach
     public void tearDown() throws Exception {
         closeable.close();
     }

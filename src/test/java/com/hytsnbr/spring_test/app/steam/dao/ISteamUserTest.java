@@ -2,6 +2,7 @@ package com.hytsnbr.spring_test.app.steam.dao;
 
 import java.util.Collections;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -23,6 +24,8 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 @SpringBootTest
 class ISteamUserTest {
     
+    private static AutoCloseable closeable;
+    
     @Autowired
     ApiProperties apiProperties;
     
@@ -33,9 +36,14 @@ class ISteamUserTest {
     
     @BeforeEach
     public void setup() {
-        MockitoAnnotations.openMocks(this);
+        closeable = MockitoAnnotations.openMocks(this);
         
         this.steamUserRepository = new SteamUserRepository(apiProperties, apiKey);
+    }
+    
+    @AfterEach
+    public void tearDown() throws Exception {
+        closeable.close();
     }
     
     @Test
