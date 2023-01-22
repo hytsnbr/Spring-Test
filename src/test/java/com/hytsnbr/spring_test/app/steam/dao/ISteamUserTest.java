@@ -15,8 +15,8 @@ import com.hytsnbr.spring_test.app.steam.dto.api.request.i_steam_user.FriendList
 import com.hytsnbr.spring_test.app.steam.dto.api.request.i_steam_user.PlayerBansRequest;
 import com.hytsnbr.spring_test.app.steam.dto.api.request.i_steam_user.PlayerSummariesRequest;
 import com.hytsnbr.spring_test.app.steam.dto.api.request.i_steam_user.ResolveVanityURLRequest;
-import com.hytsnbr.spring_test.config.property.ApiKey;
-import com.hytsnbr.spring_test.config.property.ApiProperties;
+import com.hytsnbr.spring_test.base_common.config.property.ApiKey;
+import com.hytsnbr.spring_test.base_common.config.property.ApiProperties;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;

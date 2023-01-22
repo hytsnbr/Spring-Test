@@ -17,9 +17,9 @@ import com.hytsnbr.spring_test.app.steam.dto.api.response.i_steam_user.FriendLis
 import com.hytsnbr.spring_test.app.steam.dto.api.response.i_steam_user.PlayerBansResponse;
 import com.hytsnbr.spring_test.app.steam.dto.api.response.i_steam_user.ResolveVanityURLResponse;
 import com.hytsnbr.spring_test.app.steam.dto.api.response.i_steam_user.ResolveVanityURLResponse.ResolveVanityURL;
-import com.hytsnbr.spring_test.config.property.ApiKey;
-import com.hytsnbr.spring_test.config.property.ApiProperties;
-import com.hytsnbr.spring_test.exception.api.ApiNoResponseException;
+import com.hytsnbr.spring_test.base_common.config.property.ApiKey;
+import com.hytsnbr.spring_test.base_common.config.property.ApiProperties;
+import com.hytsnbr.spring_test.base_common.exception.api.ApiNoResponseException;
 
 @Repository
 public class SteamUserRepository extends SteamApiRepository implements ISteamUser {

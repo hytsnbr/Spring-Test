@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.hytsnbr.spring_test.app.steam.dao.impl.PlayerServiceRepository;
-import com.hytsnbr.spring_test.config.property.ApiKey;
-import com.hytsnbr.spring_test.config.property.ApiProperties;
+import com.hytsnbr.spring_test.base_common.config.property.ApiKey;
+import com.hytsnbr.spring_test.base_common.config.property.ApiProperties;
 
 @SpringBootTest
 public class IPlayerServiceTest {
