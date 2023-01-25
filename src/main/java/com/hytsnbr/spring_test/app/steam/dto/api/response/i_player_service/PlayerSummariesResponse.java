@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.hytsnbr.spring_test.util.date.DateUtil;
+import com.hytsnbr.spring_test.base_common.util.date.DateUtil;
 
 @Data
 public class PlayerSummariesResponse {
