@@ -18,12 +18,12 @@ import org.springframework.web.client.RestClientException;
 import com.hytsnbr.spring_test.app.zipcode.dao.ZipCodeApi;
 import com.hytsnbr.spring_test.app.zipcode.dto.api.ZipcodeRequest;
 import com.hytsnbr.spring_test.app.zipcode.dto.api.ZipcodeResponse;
-import com.hytsnbr.spring_test.config.property.ApiProperties;
-import com.hytsnbr.spring_test.constant.RegexPattern;
-import com.hytsnbr.spring_test.dao.BaseApiRepository;
-import com.hytsnbr.spring_test.exception.CollectionOversizeException;
-import com.hytsnbr.spring_test.exception.api.ApiCallFailedException;
-import com.hytsnbr.spring_test.exception.api.ApiNoResponseException;
+import com.hytsnbr.spring_test.base_common.config.property.ApiProperties;
+import com.hytsnbr.spring_test.base_common.constant.RegexPattern;
+import com.hytsnbr.spring_test.base_common.dao.BaseApiRepository;
+import com.hytsnbr.spring_test.base_common.exception.CollectionOversizeException;
+import com.hytsnbr.spring_test.base_common.exception.api.ApiCallFailedException;
+import com.hytsnbr.spring_test.base_common.exception.api.ApiNoResponseException;
 
 @Slf4j
 @Repository

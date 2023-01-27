@@ -1,1 +1,3 @@
 rootProject.name = 'spring_test'
+
+include ':base-common'

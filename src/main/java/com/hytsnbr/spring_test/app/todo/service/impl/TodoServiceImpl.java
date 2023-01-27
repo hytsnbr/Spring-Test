@@ -18,7 +18,7 @@ import com.hytsnbr.spring_test.app.todo.dto.TodoInfoResponse;
 import com.hytsnbr.spring_test.app.todo.dto.TodoInfoSearchCondition;
 import com.hytsnbr.spring_test.app.todo.dto.entity.TodoInfoEntity;
 import com.hytsnbr.spring_test.app.todo.service.TodoService;
-import com.hytsnbr.spring_test.exception.common.SystemException;
+import com.hytsnbr.spring_test.base_common.exception.common.SystemException;
 
 @Service
 public class TodoServiceImpl implements TodoService {

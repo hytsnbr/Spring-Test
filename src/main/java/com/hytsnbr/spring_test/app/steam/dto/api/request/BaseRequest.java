@@ -2,7 +2,7 @@ package com.hytsnbr.spring_test.app.steam.dto.api.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.hytsnbr.spring_test.config.property.ApiKey;
+import com.hytsnbr.spring_test.base_common.config.property.ApiKey;
 
 public class BaseRequest {
     

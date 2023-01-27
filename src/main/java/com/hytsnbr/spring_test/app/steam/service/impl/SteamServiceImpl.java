@@ -15,7 +15,7 @@ import com.hytsnbr.spring_test.app.steam.dto.api.response.i_steam_user.Game;
 import com.hytsnbr.spring_test.app.steam.dto.api.response.i_steam_user.OwnedGamesResponse.OwnedGames;
 import com.hytsnbr.spring_test.app.steam.dto.api.response.i_steam_user.ResolveVanityURLResponse.ResolveVanityURL;
 import com.hytsnbr.spring_test.app.steam.service.SteamService;
-import com.hytsnbr.spring_test.config.property.ApiKey;
+import com.hytsnbr.spring_test.base_common.config.property.ApiKey;
 
 @Slf4j
 @Service

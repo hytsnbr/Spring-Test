@@ -7,10 +7,10 @@ import java.util.Objects;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.hytsnbr.spring_test.config.property.ApiKey;
-import com.hytsnbr.spring_test.config.property.ApiProperties;
-import com.hytsnbr.spring_test.dao.BaseApiRepository;
-import com.hytsnbr.spring_test.util.Util;
+import com.hytsnbr.spring_test.base_common.config.property.ApiKey;
+import com.hytsnbr.spring_test.base_common.config.property.ApiProperties;
+import com.hytsnbr.spring_test.base_common.dao.BaseApiRepository;
+import com.hytsnbr.spring_test.base_common.util.Util;
 
 public class SteamApiRepository extends BaseApiRepository {
     

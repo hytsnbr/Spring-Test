@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Pattern;
 import lombok.Builder;
 import lombok.Getter;
 
-import com.hytsnbr.spring_test.constant.RegexPattern;
+import com.hytsnbr.spring_test.base_common.constant.RegexPattern;
 
 @Getter
 @Builder
