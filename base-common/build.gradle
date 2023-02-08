@@ -45,7 +45,7 @@ dependencies {
     implementation 'com.sendgrid:sendgrid-java:4.9.3'
 
     // Hibernate
-    annotationProcessor 'org.hibernate.orm:hibernate-jpamodelgen:6.1.6.Final'
+    annotationProcessor 'org.hibernate.orm:hibernate-jpamodelgen:6.1.7.Final'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'
