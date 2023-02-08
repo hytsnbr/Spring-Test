@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
-import com.hytsnbr.spring_test.app.todo.dto.entity.TodoInfoEntity;
+import com.hytsnbr.spring_test.app.todo.entity.TodoInfoEntity;
 
 @Repository
 public interface TodoInfoRepository
