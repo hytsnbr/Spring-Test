@@ -23,6 +23,18 @@ repositories {
     mavenCentral()
 }
 
+subprojects {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        // Apache Commons
+        implementation 'org.apache.commons:commons-lang3:3.12.0'
+        implementation 'org.apache.commons:commons-collections4:4.4'
+    }
+}
+
 dependencies {
     // Apache Commons
     implementation 'org.apache.commons:commons-lang3:3.12.0'
@@ -54,11 +66,14 @@ dependencies {
     // H2 Database
     runtimeOnly 'com.h2database:h2'
 
-    // Unit Test
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'io.projectreactor:reactor-test'
+//    // Unit Test
+//    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    testImplementation 'io.projectreactor:reactor-test'
 
-    implementation project(':base-common')
+    implementation project('base-common')
+    implementation project('steam')
+    implementation project('todo')
+    implementation project('zipcode')
 }
 
 tasks.named('test') {

@@ -1,3 +1,6 @@
 rootProject.name = 'spring_test'
 
-include ':base-common'
+include 'base-common'
+include 'steam'
+include 'todo'
+include 'zipcode'
