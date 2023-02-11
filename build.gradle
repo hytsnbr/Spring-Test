@@ -69,6 +69,10 @@ dependencies {
     // H2 Database
     runtimeOnly 'com.h2database:h2'
 
+    // Unit Test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+
     implementation project(':steam')
     implementation project(':todo')
     implementation project(':zipcode')
