@@ -2,90 +2,80 @@ plugins {
     id 'org.springframework.boot' version '3.0.2'
     id 'io.spring.dependency-management' version '1.1.0'
     id 'java'
+    id 'idea'
     id "org.sonarqube" version "3.5.0.2730"
 }
 
-group = 'com.hytsnbr'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+allprojects {
+    group = 'com.hytsnbr'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '17'
 
-bootJar {
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
+    bootJar {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    }
 
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
+    repositories {
+        mavenCentral()
     }
 }
 
-repositories {
-    mavenCentral()
-}
-
 subprojects {
-    repositories {
-        mavenCentral()
+    apply {
+        plugin 'java'
+        plugin 'org.springframework.boot'
+        plugin 'io.spring.dependency-management'
+    }
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    tasks.bootRun {
+        enabled = false
+    }
+
+    tasks.bootJar {
+        enabled = false
     }
 
     dependencies {
         // Apache Commons
         implementation 'org.apache.commons:commons-lang3:3.12.0'
         implementation 'org.apache.commons:commons-collections4:4.4'
+
+        // Spring Boot Configuration Processor
+        annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+        // Lombok
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+
+        // Unit Test
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'io.projectreactor:reactor-test'
     }
 }
 
 dependencies {
-    // Apache Commons
-    implementation 'org.apache.commons:commons-lang3:3.12.0'
-    implementation 'org.apache.commons:commons-collections4:4.4'
-
     // Spring Boot Starter
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
-    implementation 'org.springframework.boot:spring-boot-starter-web-services'
-    implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
     // Spring Boot Devtools
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
-    // Spring Boot Configuration Processor
-    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-
-    // SendGrid
-    implementation 'com.sendgrid:sendgrid-java:4.9.3'
-
-    // Hibernate
-    annotationProcessor 'org.hibernate.orm:hibernate-jpamodelgen:6.1.6.Final'
-
-    // Lombok
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-
     // H2 Database
     runtimeOnly 'com.h2database:h2'
 
-//    // Unit Test
-//    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//    testImplementation 'io.projectreactor:reactor-test'
-
-    implementation project('base-common')
-    implementation project('steam')
-    implementation project('todo')
-    implementation project('zipcode')
+    implementation project(':steam')
+    implementation project(':todo')
+    implementation project(':zipcode')
 }
 
 tasks.named('test') {
     useJUnitPlatform()
-}
-
-sourceSets {
-    main {
-        java {
-            srcDirs 'generated/sources/annotationProcessor/java/main/'
-        }
-    }
 }
 
 sonar {
