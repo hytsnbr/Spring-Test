@@ -10,11 +10,11 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.hytsnbr.spring_test.app.steam.dao.impl.SteamUserRepository;
-import com.hytsnbr.spring_test.app.steam.dto.api.request.i_steam_user.FriendListRequest;
-import com.hytsnbr.spring_test.app.steam.dto.api.request.i_steam_user.PlayerBansRequest;
-import com.hytsnbr.spring_test.app.steam.dto.api.request.i_steam_user.PlayerSummariesRequest;
-import com.hytsnbr.spring_test.app.steam.dto.api.request.i_steam_user.ResolveVanityURLRequest;
+import com.hytsnbr.api.request.i_steam_user.FriendListRequest;
+import com.hytsnbr.api.request.i_steam_user.PlayerBansRequest;
+import com.hytsnbr.api.request.i_steam_user.PlayerSummariesRequest;
+import com.hytsnbr.api.request.i_steam_user.ResolveVanityURLRequest;
+import com.hytsnbr.dao.impl.SteamUserRepository;
 import com.hytsnbr.spring_test.base_common.config.property.ApiKey;
 import com.hytsnbr.spring_test.base_common.config.property.ApiProperties;
 
