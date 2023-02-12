@@ -8,7 +8,7 @@ import java.util.Objects;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Service;
 
-import com.hytsnbr.spring_test.base_common.exception.common.SystemException;
+import com.hytsnbr.base_common.exception.common.SystemException;
 import com.hytsnbr.todo.dao.jpa.TodoInfoRepository;
 import com.hytsnbr.todo.dto.TodoInfoResponse;
 import com.hytsnbr.todo.dto.entity.TodoInfoEntity;
