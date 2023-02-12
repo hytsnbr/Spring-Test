@@ -1,17 +1,15 @@
-package com.hytsnbr.spring_test.util.date.converter;
+package com.hytsnbr.base_common.util.date.converter;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.hytsnbr.base_common.util.date.converter.LocalDateTimeConverter;
-
-public class LocalDateTimeConverterTest {
+public class SqlDateConverterTest {
     
-    private LocalDateTimeConverter localDateTimeConverter;
+    private SqlDateConverter sqlDateConverter;
     
     @BeforeEach
     void setUp() {
-        localDateTimeConverter = new LocalDateTimeConverter();
+        sqlDateConverter = new SqlDateConverter();
     }
     
     @Test

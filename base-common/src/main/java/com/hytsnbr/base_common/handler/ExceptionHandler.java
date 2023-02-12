@@ -15,7 +15,7 @@ public class ExceptionHandler {
     /**
      * {@link ExceptionHandler}
      */
-    @org.springframework.web.bind.annotation.ExceptionHandler({Exception.class})
+    @org.springframework.web.bind.annotation.ExceptionHandler({ Exception.class })
     public ResponseEntity<BaseResponse> exceptionHandler(Exception exception) {
         log.error("Something Error Happened...", exception);
         

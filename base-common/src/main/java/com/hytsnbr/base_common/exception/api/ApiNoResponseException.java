@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * レスポンスが空
  */
-public class ApiNoResponseException extends com.hytsnbr.base_common.exception.api.ApiException {
+public class ApiNoResponseException extends ApiException {
     
     private static final String MESSAGE = "レスポンスが空です";
     

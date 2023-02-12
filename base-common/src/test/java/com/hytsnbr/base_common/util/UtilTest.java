@@ -1,9 +1,7 @@
-package com.hytsnbr.spring_test.util;
+package com.hytsnbr.base_common.util;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import com.hytsnbr.base_common.util.Util;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

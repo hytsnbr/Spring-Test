@@ -3,6 +3,7 @@ package com.hytsnbr.base_common.util;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * 時間関連ユーティリティ
@@ -23,7 +24,7 @@ public final class TimeUtil {
     /**
      * 指定日付から年度を取得
      */
-    public static int getNendo(java.util.Date date) {
+    public static int getNendo(Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         

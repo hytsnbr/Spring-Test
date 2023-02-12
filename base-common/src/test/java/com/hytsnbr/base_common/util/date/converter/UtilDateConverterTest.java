@@ -1,4 +1,4 @@
-package com.hytsnbr.spring_test.util.date.converter;
+package com.hytsnbr.base_common.util.date.converter;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
@@ -10,8 +10,6 @@ import java.util.TimeZone;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import com.hytsnbr.base_common.util.date.converter.UtilDateConverter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;

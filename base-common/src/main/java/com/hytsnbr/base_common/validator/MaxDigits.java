@@ -17,7 +17,7 @@ import com.hytsnbr.base_common.validator.impl.MaxDigitsValidator;
  * 正の整数（自然数）の桁数バリデーター
  */
 @Documented
-@Constraint(validatedBy = {MaxDigitsValidator.class})
+@Constraint(validatedBy = { MaxDigitsValidator.class })
 @Target({
     ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR,
     ElementType.PARAMETER, ElementType.TYPE_USE

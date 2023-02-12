@@ -1,11 +1,9 @@
-package com.hytsnbr.spring_test.util.date.converter;
+package com.hytsnbr.base_common.util.date.converter;
 
 import java.time.LocalDate;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import com.hytsnbr.base_common.util.date.converter.LocalDateConverter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;

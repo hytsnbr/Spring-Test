@@ -8,8 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public final class SqlDateConverter
-    extends com.hytsnbr.base_common.util.date.converter.AbstractDateConverter<Date> {
+public final class SqlDateConverter extends AbstractDateConverter<Date> {
     
     public SqlDateConverter() {
     }

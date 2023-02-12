@@ -1,4 +1,4 @@
-package com.hytsnbr.spring_test.util;
+package com.hytsnbr.base_common.util;
 
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -6,8 +6,6 @@ import java.util.Date;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import com.hytsnbr.base_common.util.TimeUtil;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

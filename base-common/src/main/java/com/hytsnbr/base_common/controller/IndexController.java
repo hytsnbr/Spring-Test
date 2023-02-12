@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
-public class IndexController extends com.hytsnbr.base_common.controller.BaseController {
+public class IndexController extends BaseController {
     
     @GetMapping
     

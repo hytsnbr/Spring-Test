@@ -11,11 +11,11 @@ import com.hytsnbr.steam.dto.api.request.BaseRequest;
 @Setter
 public class RecentlyPlayedGamesRequest extends BaseRequest {
     
-    @JsonProperty("steamid")
-    private String steamId;
-    
     @JsonProperty("count")
     private final int count = 0;
+    
+    @JsonProperty("steamid")
+    private String steamId;
     
     /**
      * コンストラクタ

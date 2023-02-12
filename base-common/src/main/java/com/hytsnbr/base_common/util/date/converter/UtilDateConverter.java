@@ -9,8 +9,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
-public final class UtilDateConverter
-    extends com.hytsnbr.base_common.util.date.converter.AbstractDateConverter<Date> {
+public final class UtilDateConverter extends AbstractDateConverter<Date> {
     
     public UtilDateConverter() {
     }
