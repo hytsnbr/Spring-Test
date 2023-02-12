@@ -1,12 +1,12 @@
-package com.hytsnbr.zipcode;
+package com.hytsnbr.steam;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class SteamApplication {
     
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(SteamApplication.class, args);
     }
 }
