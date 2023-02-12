@@ -41,9 +41,6 @@ dependencies {
     // Spring Boot Configuration Processor
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 
-    // Hibernate
-    annotationProcessor 'org.hibernate.orm:hibernate-jpamodelgen:6.1.6.Final'
-
     // Lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
@@ -60,14 +57,6 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
-}
-
-sourceSets {
-    main {
-        java {
-            srcDirs 'generated/sources/annotationProcessor/java/main/'
-        }
-    }
 }
 
 sonar {
