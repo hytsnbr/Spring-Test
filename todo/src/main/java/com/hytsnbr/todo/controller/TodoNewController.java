@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.hytsnbr.spring_test.base_common.constant.URL;
+import com.hytsnbr.base_common.constant.URL;
 import com.hytsnbr.todo.dto.entity.TodoInfoEntity;
 
 @RestController

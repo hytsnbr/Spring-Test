@@ -15,12 +15,12 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestClientException;
 
-import com.hytsnbr.spring_test.base_common.config.property.ApiProperties;
-import com.hytsnbr.spring_test.base_common.constant.RegexPattern;
-import com.hytsnbr.spring_test.base_common.dao.BaseApiRepository;
-import com.hytsnbr.spring_test.base_common.exception.CollectionOversizeException;
-import com.hytsnbr.spring_test.base_common.exception.api.ApiCallFailedException;
-import com.hytsnbr.spring_test.base_common.exception.api.ApiNoResponseException;
+import com.hytsnbr.base_common.config.property.ApiProperties;
+import com.hytsnbr.base_common.constant.RegexPattern;
+import com.hytsnbr.base_common.dao.BaseApiRepository;
+import com.hytsnbr.base_common.exception.CollectionOversizeException;
+import com.hytsnbr.base_common.exception.api.ApiCallFailedException;
+import com.hytsnbr.base_common.exception.api.ApiNoResponseException;
 import com.hytsnbr.zipcode.dao.ZipCodeApi;
 import com.hytsnbr.zipcode.dto.api.ZipcodeRequest;
 import com.hytsnbr.zipcode.dto.api.ZipcodeResponse;
