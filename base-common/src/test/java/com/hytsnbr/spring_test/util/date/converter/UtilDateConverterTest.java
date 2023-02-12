@@ -11,7 +11,7 @@ import java.util.TimeZone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.hytsnbr.spring_test.base_common.util.date.converter.UtilDateConverter;
+import com.hytsnbr.base_common.util.date.converter.UtilDateConverter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;

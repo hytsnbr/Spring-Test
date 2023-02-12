@@ -3,7 +3,7 @@ package com.hytsnbr.spring_test.util.date.converter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.hytsnbr.spring_test.base_common.util.date.converter.SqlDateConverter;
+import com.hytsnbr.base_common.util.date.converter.SqlDateConverter;
 
 public class SqlDateConverterTest {
     

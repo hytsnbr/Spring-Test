@@ -7,7 +7,7 @@ import java.util.Date;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.hytsnbr.spring_test.base_common.util.TimeUtil;
+import com.hytsnbr.base_common.util.TimeUtil;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
