@@ -28,5 +28,5 @@ jobs:
       - name: Build with Gradle
         run: gradle build --info -x test
 
-      - name: BootJar with Gradle
-        run: gradle bootJar --info -x test
+      - name: SonarCloud Analysis
+        run: gradle sonar
