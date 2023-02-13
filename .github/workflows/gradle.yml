@@ -5,6 +5,7 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -28,5 +29,10 @@ jobs:
       - name: Build with Gradle
         run: gradle build --info -x test
 
+  sonar:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+
+    steps:
       - name: SonarCloud Analysis
         run: gradle sonar
