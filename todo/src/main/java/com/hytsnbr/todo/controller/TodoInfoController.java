@@ -25,17 +25,17 @@ import com.hytsnbr.todo.dto.TodoInfoRequest;
 import com.hytsnbr.todo.dto.TodoInfoResponse;
 import com.hytsnbr.todo.dto.TodoInfoSearchCondition;
 import com.hytsnbr.todo.entity.TodoInfoEntity_;
-import com.hytsnbr.todo.service.TodoService;
+import com.hytsnbr.todo.service.TodoInfoService;
 
 @Validated
 @RestController
 @RequestMapping("/todo")
 public class TodoInfoController extends BaseController {
     
-    private final TodoService todoService;
+    private final TodoInfoService todoInfoService;
     
-    public TodoInfoController(TodoService todoService) {
-        this.todoService = todoService;
+    public TodoInfoController(TodoInfoService todoInfoService) {
+        this.todoInfoService = todoInfoService;
     }
     
     @GetMapping("/search")
@@ -47,7 +47,7 @@ public class TodoInfoController extends BaseController {
         @PageableDefault(size = TodoInfoPageableConst.SIZE_DEFAULT, sort = TodoInfoPageableConst.SORT_DEFAULT)
         Pageable pageable
     ) {
-        return todoService.search(condition, pageable);
+        return todoInfoService.search(condition, pageable);
     }
     
     @GetMapping("/list")
@@ -57,31 +57,31 @@ public class TodoInfoController extends BaseController {
         @PageableDefault(size = TodoInfoPageableConst.SIZE_DEFAULT, sort = TodoInfoPageableConst.SORT_DEFAULT)
         Pageable pageable
     ) {
-        return todoService.getTodoList(pageable);
+        return todoInfoService.getTodoList(pageable);
     }
     
     @GetMapping("/detail/{id}")
     public TodoInfoResponse detail(@PathVariable long id) {
-        return todoService.getTodoInfo(id);
+        return todoInfoService.getTodoInfo(id);
     }
     
     @PostMapping("/create")
     public TodoInfoResponse create(@Validated @RequestBody TodoInfoRequest request) {
-        return todoService.create(request);
+        return todoInfoService.create(request);
     }
     
     @PutMapping("/update/{id}")
     public TodoInfoResponse upsert(@PathVariable long id, @Validated @RequestBody TodoInfoRequest request) {
-        return todoService.upsert(id, request);
+        return todoInfoService.upsert(id, request);
     }
     
     @PatchMapping("/update/{id}")
     public TodoInfoResponse update(@PathVariable long id, @Validated @RequestBody TodoInfoRequest request) {
-        return todoService.update(id, request);
+        return todoInfoService.update(id, request);
     }
     
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable long id) {
-        todoService.delete(id);
+        todoInfoService.delete(id);
     }
 }

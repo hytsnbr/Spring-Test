@@ -9,7 +9,7 @@ import com.hytsnbr.todo.dto.TodoInfoRequest;
 import com.hytsnbr.todo.dto.TodoInfoResponse;
 import com.hytsnbr.todo.dto.TodoInfoSearchCondition;
 
-public interface TodoService {
+public interface TodoInfoService {
     
     TodoInfoResponse getTodoInfo(long id);
     

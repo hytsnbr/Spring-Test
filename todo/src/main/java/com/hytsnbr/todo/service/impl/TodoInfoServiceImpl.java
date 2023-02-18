@@ -19,14 +19,14 @@ import com.hytsnbr.todo.dto.TodoInfoRequest;
 import com.hytsnbr.todo.dto.TodoInfoResponse;
 import com.hytsnbr.todo.dto.TodoInfoSearchCondition;
 import com.hytsnbr.todo.entity.TodoInfoEntity;
-import com.hytsnbr.todo.service.TodoService;
+import com.hytsnbr.todo.service.TodoInfoService;
 
 @Service
-public class TodoServiceImpl implements TodoService {
+public class TodoInfoServiceImpl implements TodoInfoService {
     
     private final TodoInfoRepository repository;
     
-    public TodoServiceImpl(TodoInfoRepository repository) {
+    public TodoInfoServiceImpl(TodoInfoRepository repository) {
         this.repository = repository;
     }
     
