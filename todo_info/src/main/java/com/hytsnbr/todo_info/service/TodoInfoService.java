@@ -1,13 +1,13 @@
-package com.hytsnbr.todo.service;
+package com.hytsnbr.todo_info.service;
 
 import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.hytsnbr.todo.dto.TodoInfoRequest;
-import com.hytsnbr.todo.dto.TodoInfoResponse;
-import com.hytsnbr.todo.dto.TodoInfoSearchCondition;
+import com.hytsnbr.todo_info.dto.TodoInfoRequest;
+import com.hytsnbr.todo_info.dto.TodoInfoResponse;
+import com.hytsnbr.todo_info.dto.TodoInfoSearchCondition;
 
 public interface TodoInfoService {
     

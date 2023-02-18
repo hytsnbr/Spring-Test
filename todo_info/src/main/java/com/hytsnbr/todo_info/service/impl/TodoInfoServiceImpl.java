@@ -1,4 +1,4 @@
-package com.hytsnbr.todo.service.impl;
+package com.hytsnbr.todo_info.service.impl;
 
 import jakarta.transaction.Transactional;
 
@@ -12,14 +12,14 @@ import org.springframework.stereotype.Service;
 
 import com.hytsnbr.base_common.exception.common.SystemException;
 import com.hytsnbr.base_common.exception.database.SearchCountLimitOverException;
-import com.hytsnbr.todo.constant.TodoInfoPageableConst;
-import com.hytsnbr.todo.dao.jpa.TodoInfoRepository;
-import com.hytsnbr.todo.dao.jpa.specification.TodoInfoSpecification;
-import com.hytsnbr.todo.dto.TodoInfoRequest;
-import com.hytsnbr.todo.dto.TodoInfoResponse;
-import com.hytsnbr.todo.dto.TodoInfoSearchCondition;
-import com.hytsnbr.todo.entity.TodoInfoEntity;
-import com.hytsnbr.todo.service.TodoInfoService;
+import com.hytsnbr.todo_info.constant.TodoInfoPageableConst;
+import com.hytsnbr.todo_info.dao.jpa.TodoInfoRepository;
+import com.hytsnbr.todo_info.dao.jpa.specification.TodoInfoSpecification;
+import com.hytsnbr.todo_info.dto.TodoInfoRequest;
+import com.hytsnbr.todo_info.dto.TodoInfoResponse;
+import com.hytsnbr.todo_info.dto.TodoInfoSearchCondition;
+import com.hytsnbr.todo_info.entity.TodoInfoEntity;
+import com.hytsnbr.todo_info.service.TodoInfoService;
 
 @Service
 public class TodoInfoServiceImpl implements TodoInfoService {

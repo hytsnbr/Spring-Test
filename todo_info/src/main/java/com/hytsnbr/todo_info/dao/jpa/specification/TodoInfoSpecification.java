@@ -1,4 +1,4 @@
-package com.hytsnbr.todo.dao.jpa.specification;
+package com.hytsnbr.todo_info.dao.jpa.specification;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -6,8 +6,8 @@ import java.util.Objects;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.jpa.domain.Specification;
 
-import com.hytsnbr.todo.entity.TodoInfoEntity;
-import com.hytsnbr.todo.entity.TodoInfoEntity_;
+import com.hytsnbr.todo_info.entity.TodoInfoEntity;
+import com.hytsnbr.todo_info.entity.TodoInfoEntity_;
 
 public class TodoInfoSpecification {
     

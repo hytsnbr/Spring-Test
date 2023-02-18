@@ -1,4 +1,4 @@
-package com.hytsnbr.todo.dto;
+package com.hytsnbr.todo_info.dto;
 
 import java.sql.Timestamp;
 

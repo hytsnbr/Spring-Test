@@ -1,4 +1,4 @@
-package com.hytsnbr.todo.entity;
+package com.hytsnbr.todo_info.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,7 +17,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import com.hytsnbr.todo.constant.Processing;
+import com.hytsnbr.todo_info.constant.Processing;
 
 @Getter
 @Entity

@@ -1,4 +1,4 @@
-package com.hytsnbr.todo.controller;
+package com.hytsnbr.todo_info.controller;
 
 import java.util.List;
 
@@ -20,12 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hytsnbr.base_common.controller.BaseController;
 import com.hytsnbr.base_common.validator.AllowedSortProperties;
 import com.hytsnbr.base_common.validator.PagerSizeLimit;
-import com.hytsnbr.todo.constant.TodoInfoPageableConst;
-import com.hytsnbr.todo.dto.TodoInfoRequest;
-import com.hytsnbr.todo.dto.TodoInfoResponse;
-import com.hytsnbr.todo.dto.TodoInfoSearchCondition;
-import com.hytsnbr.todo.entity.TodoInfoEntity_;
-import com.hytsnbr.todo.service.TodoInfoService;
+import com.hytsnbr.todo_info.constant.TodoInfoPageableConst;
+import com.hytsnbr.todo_info.dto.TodoInfoRequest;
+import com.hytsnbr.todo_info.dto.TodoInfoResponse;
+import com.hytsnbr.todo_info.dto.TodoInfoSearchCondition;
+import com.hytsnbr.todo_info.entity.TodoInfoEntity_;
+import com.hytsnbr.todo_info.service.TodoInfoService;
 
 @Validated
 @RestController

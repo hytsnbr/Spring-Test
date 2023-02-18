@@ -1,4 +1,4 @@
-package com.hytsnbr.todo.entity;
+package com.hytsnbr.todo_info.entity;
 
 import jakarta.persistence.metamodel.SingularAttribute;
 import jakarta.persistence.metamodel.StaticMetamodel;

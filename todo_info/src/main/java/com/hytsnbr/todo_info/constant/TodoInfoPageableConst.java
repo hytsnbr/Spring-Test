@@ -1,6 +1,6 @@
-package com.hytsnbr.todo.constant;
+package com.hytsnbr.todo_info.constant;
 
-import com.hytsnbr.todo.entity.TodoInfoEntity_;
+import com.hytsnbr.todo_info.entity.TodoInfoEntity_;
 
 public final class TodoInfoPageableConst {
     
@@ -15,4 +15,8 @@ public final class TodoInfoPageableConst {
     
     /** 検索での最大表示件数 */
     public static final int SEARCH_CAN_DISPLAY_COUNT = 1000;
+    
+    private TodoInfoPageableConst() {
+        throw new IllegalStateException("Utility class");
+    }
 }

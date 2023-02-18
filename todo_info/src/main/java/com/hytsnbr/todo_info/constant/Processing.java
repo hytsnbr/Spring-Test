@@ -1,4 +1,4 @@
-package com.hytsnbr.todo.constant;
+package com.hytsnbr.todo_info.constant;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
