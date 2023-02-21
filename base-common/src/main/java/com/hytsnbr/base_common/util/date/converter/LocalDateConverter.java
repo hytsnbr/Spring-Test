@@ -1,5 +1,6 @@
 package com.hytsnbr.base_common.util.date.converter;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.time.LocalDate;
@@ -35,8 +36,8 @@ public final class LocalDateConverter extends AbstractDateConverter<LocalDate> {
     }
     
     @Override
-    public java.sql.Date toSqlDate(LocalDate target) {
-        return java.sql.Date.valueOf(target);
+    public Date toSqlDate(LocalDate target) {
+        return Date.valueOf(target);
     }
     
     @Override

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hytsnbr.steam.api.response.i_steam_user.Game;
+import com.hytsnbr.steam.dto.api.response.i_steam_user.Game;
 import com.hytsnbr.steam.service.SteamService;
 
 @Slf4j

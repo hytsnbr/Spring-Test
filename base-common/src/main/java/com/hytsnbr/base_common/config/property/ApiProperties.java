@@ -3,6 +3,7 @@ package com.hytsnbr.base_common.config.property;
 import lombok.Data;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Data
 @Configuration
+@ConfigurationPropertiesScan
 @ConfigurationProperties(prefix = "api.config")
 public class ApiProperties {
     

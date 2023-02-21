@@ -8,18 +8,18 @@ import org.springframework.stereotype.Repository;
 import com.hytsnbr.base_common.config.property.ApiKey;
 import com.hytsnbr.base_common.config.property.ApiProperties;
 import com.hytsnbr.base_common.exception.api.ApiNoResponseException;
-import com.hytsnbr.steam.api.request.i_steam_user.FriendListRequest;
-import com.hytsnbr.steam.api.request.i_steam_user.PlayerBansRequest;
-import com.hytsnbr.steam.api.request.i_steam_user.PlayerSummariesRequest;
-import com.hytsnbr.steam.api.request.i_steam_user.ResolveVanityURLRequest;
-import com.hytsnbr.steam.api.response.i_player_service.PlayerSummariesResponse;
-import com.hytsnbr.steam.api.response.i_steam_user.FriendListResponse;
-import com.hytsnbr.steam.api.response.i_steam_user.PlayerBansResponse;
-import com.hytsnbr.steam.api.response.i_steam_user.ResolveVanityURLResponse;
-import com.hytsnbr.steam.api.response.i_steam_user.ResolveVanityURLResponse.ResolveVanityURL;
 import com.hytsnbr.steam.constant.SteamApiEndpoints;
 import com.hytsnbr.steam.dao.ISteamUser;
 import com.hytsnbr.steam.dao.SteamApiRepository;
+import com.hytsnbr.steam.dto.api.request.i_steam_user.FriendListRequest;
+import com.hytsnbr.steam.dto.api.request.i_steam_user.PlayerBansRequest;
+import com.hytsnbr.steam.dto.api.request.i_steam_user.PlayerSummariesRequest;
+import com.hytsnbr.steam.dto.api.request.i_steam_user.ResolveVanityURLRequest;
+import com.hytsnbr.steam.dto.api.response.i_player_service.PlayerSummariesResponse;
+import com.hytsnbr.steam.dto.api.response.i_steam_user.FriendListResponse;
+import com.hytsnbr.steam.dto.api.response.i_steam_user.PlayerBansResponse;
+import com.hytsnbr.steam.dto.api.response.i_steam_user.ResolveVanityURLResponse;
+import com.hytsnbr.steam.dto.api.response.i_steam_user.ResolveVanityURLResponse.ResolveVanityURL;
 
 @Repository
 public class SteamUserRepository extends SteamApiRepository implements ISteamUser {

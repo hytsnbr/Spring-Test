@@ -12,11 +12,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.hytsnbr.base_common.config.property.ApiKey;
 import com.hytsnbr.base_common.config.property.ApiProperties;
-import com.hytsnbr.steam.api.request.i_steam_user.FriendListRequest;
-import com.hytsnbr.steam.api.request.i_steam_user.PlayerBansRequest;
-import com.hytsnbr.steam.api.request.i_steam_user.PlayerSummariesRequest;
-import com.hytsnbr.steam.api.request.i_steam_user.ResolveVanityURLRequest;
 import com.hytsnbr.steam.dao.impl.SteamUserRepository;
+import com.hytsnbr.steam.dto.api.request.i_steam_user.FriendListRequest;
+import com.hytsnbr.steam.dto.api.request.i_steam_user.PlayerBansRequest;
+import com.hytsnbr.steam.dto.api.request.i_steam_user.PlayerSummariesRequest;
+import com.hytsnbr.steam.dto.api.request.i_steam_user.ResolveVanityURLRequest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;

@@ -8,13 +8,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import com.hytsnbr.base_common.config.property.ApiKey;
-import com.hytsnbr.steam.api.request.i_player_service.OwnedGamesRequest;
-import com.hytsnbr.steam.api.request.i_steam_user.ResolveVanityURLRequest;
-import com.hytsnbr.steam.api.response.i_steam_user.Game;
-import com.hytsnbr.steam.api.response.i_steam_user.OwnedGamesResponse.OwnedGames;
-import com.hytsnbr.steam.api.response.i_steam_user.ResolveVanityURLResponse.ResolveVanityURL;
 import com.hytsnbr.steam.dao.IPlayerService;
 import com.hytsnbr.steam.dao.ISteamUser;
+import com.hytsnbr.steam.dto.api.request.i_player_service.OwnedGamesRequest;
+import com.hytsnbr.steam.dto.api.request.i_steam_user.ResolveVanityURLRequest;
+import com.hytsnbr.steam.dto.api.response.i_steam_user.Game;
+import com.hytsnbr.steam.dto.api.response.i_steam_user.OwnedGamesResponse.OwnedGames;
+import com.hytsnbr.steam.dto.api.response.i_steam_user.ResolveVanityURLResponse.ResolveVanityURL;
 import com.hytsnbr.steam.service.SteamService;
 
 @Slf4j

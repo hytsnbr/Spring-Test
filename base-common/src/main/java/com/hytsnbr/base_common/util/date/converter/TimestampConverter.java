@@ -1,5 +1,6 @@
 package com.hytsnbr.base_common.util.date.converter;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -48,8 +49,8 @@ public class TimestampConverter extends AbstractDateConverter<Timestamp> {
     }
     
     @Override
-    public java.sql.Date toSqlDate(Timestamp target) {
-        return new java.sql.Date(target.getTime());
+    public Date toSqlDate(Timestamp target) {
+        return new Date(target.getTime());
     }
     
     @Override
