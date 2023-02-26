@@ -1,0 +1,13 @@
+package com.hytsnbr.steam_tool.dto;
+
+@Getter
+@Setter
+public class ${className}Request {
+#foreach($param in $params)
+
+    #if(${param.required} == "true")
+    @NotNull
+    #end
+private ${param.type} ${param.name};
+#end
+}
