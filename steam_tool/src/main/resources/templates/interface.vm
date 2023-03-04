@@ -1,0 +1,8 @@
+package com.hytsnbr.steam_tool.dao;
+
+public interface ${interfaceName} {
+#foreach($param in $params)
+
+    ${param.responseName} ${param.apiName}(${param.requestName} request);
+#end
+}
