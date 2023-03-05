@@ -1,0 +1,8 @@
+package com.hytsnbr.steam_tool.dao;
+
+public final class ${className} {
+#foreach($param in $params)
+
+    public static final String ${param.fieldName} = "${param.value}";
+#end
+}

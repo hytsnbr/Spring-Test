@@ -9,6 +9,7 @@ public enum GenerateFileType {
     
     REQUEST("request", "request.vm"),
     INTERFACE("interface", "interface.vm"),
+    URL("url", "url.vm"),
     ;
     
     private final String generateDirName;
