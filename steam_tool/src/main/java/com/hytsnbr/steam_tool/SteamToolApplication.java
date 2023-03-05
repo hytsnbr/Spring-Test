@@ -13,6 +13,7 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import com.hytsnbr.base_common.exception.common.SystemException;
 import com.hytsnbr.steam_tool.executor.InterfaceCreator;
 import com.hytsnbr.steam_tool.executor.RequestCreator;
+import com.hytsnbr.steam_tool.executor.UrlListCreator;
 
 @ConfigurationPropertiesScan(value = "com.hytsnbr.base_common.config.property")
 @SpringBootApplication
@@ -34,6 +35,9 @@ public class SteamToolApplication {
             
             InterfaceCreator interfaceCreator = new InterfaceCreator();
             interfaceCreator.execute();
+            
+            UrlListCreator urlListCreator = new UrlListCreator();
+            urlListCreator.execute();
             
             LOGGER.info("生成に成功しました");
         } catch (SystemException e) {
