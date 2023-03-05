@@ -16,7 +16,7 @@ import com.hytsnbr.steam_tool.dto.GetSupportedApiListResponse.ApiList.Interface;
 
 public class UrlListCreator extends AbstractCreator {
     
-    private static final String FILE_NAME = "%s.json.java";
+    private static final String FILE_NAME = "%s.java";
     
     private static final String URL_FORMAT = "https://api.steampowered.com/%s/%s/v%d";
     
