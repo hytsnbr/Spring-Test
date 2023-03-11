@@ -9,6 +9,7 @@ import java.util.Map;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.context.Context;
 
+import com.google.common.base.CaseFormat;
 import com.hytsnbr.base_common.exception.common.SystemException;
 import com.hytsnbr.steam_tool.constant.GenerateFileType;
 import com.hytsnbr.steam_tool.dao.SteamDao;
@@ -36,8 +37,10 @@ public class InterfaceCreator extends AbstractCreator {
             
             List<Map<String, String>> params = new ArrayList<>();
             apiInterface.getMethods().forEach(method -> {
+                final String methodName = CaseFormat.UPPER_CAMEL.to(CaseFormat.LOWER_CAMEL, method.getName());
+                
                 Map<String, String> param = new HashMap<>();
-                param.put("apiName", method.getName());
+                param.put("apiName", methodName);
                 param.put("responseName", method.getName() + "Request");
                 param.put("requestName", method.getName() + "Response");
                 
