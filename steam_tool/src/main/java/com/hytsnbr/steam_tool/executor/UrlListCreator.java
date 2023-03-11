@@ -9,6 +9,7 @@ import java.util.Map;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.context.Context;
 
+import com.google.common.base.CaseFormat;
 import com.hytsnbr.base_common.exception.common.SystemException;
 import com.hytsnbr.steam_tool.constant.GenerateFileType;
 import com.hytsnbr.steam_tool.dao.SteamDao;
@@ -37,7 +38,7 @@ public class UrlListCreator extends AbstractCreator {
         for (Interface apiInterface : apiInterfaceList) {
             apiInterface.getMethods().forEach(method -> {
                 Map<String, String> param = new HashMap<>();
-                param.put("fieldName", method.getName());
+                param.put("fieldName", CaseFormat.UPPER_CAMEL.to(CaseFormat.UPPER_UNDERSCORE, method.getName()));
                 param.put("value",
                     String.format(URL_FORMAT, apiInterface.getName(), method.getName(), method.getVersion())
                 );
