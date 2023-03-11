@@ -8,6 +8,6 @@ public class ${className}Request {
     #if(${param.required} == "true")
     @NotNull
     #end
-private ${param.type} ${param.name};
+    private ${param.type} ${param.name};
 #end
 }
