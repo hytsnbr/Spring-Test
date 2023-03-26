@@ -2,6 +2,7 @@ package com.hytsnbr.zipcode.dto.api;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+
 import lombok.Builder;
 import lombok.Getter;
 

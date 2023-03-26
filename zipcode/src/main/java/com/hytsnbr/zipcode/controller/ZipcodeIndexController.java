@@ -1,32 +1,32 @@
 package com.hytsnbr.zipcode.controller;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hytsnbr.zipcode.dao.ZipCodeApi;
+import lombok.extern.slf4j.Slf4j;
+
+import com.hytsnbr.zipcode.dao.ZipcodeApi;
 
 @Slf4j
 @RestController
 @RequestMapping("/zipcode")
 public class ZipcodeIndexController {
     
-    private final ZipCodeApi zipCodeApi;
+    private final ZipcodeApi zipcodeApi;
     
     /**
      * コンストラクタ
      */
-    public ZipcodeIndexController(ZipCodeApi zipCodeApi) {
-        this.zipCodeApi = zipCodeApi;
+    public ZipcodeIndexController(ZipcodeApi zipcodeApi) {
+        this.zipcodeApi = zipcodeApi;
     }
     
-    @GetMapping(params = "zipcode")
+    @GetMapping
     public String zipcode(@RequestParam String zipcode) {
         
-        String address = zipCodeApi.getAddress(zipcode);
+        String address = zipcodeApi.getAddress(zipcode);
         
         return "zipcode/index";
     }
