@@ -54,7 +54,7 @@ updates:
     open-pull-requests-limit: 99
 
   - package-ecosystem: "gradle"
-    directory: todo_info/
+    directory: todo-info/
     schedule:
       interval: "daily"
       timezone: Asia/Tokyo
