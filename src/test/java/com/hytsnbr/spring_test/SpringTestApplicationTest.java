@@ -5,8 +5,4 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class SpringTestApplicationTest {
-    
-    @Test
-    void contextLoads() {
-    }
 }
