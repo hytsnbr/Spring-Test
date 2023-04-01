@@ -1,9 +1,9 @@
 package com.hytsnbr.todo_info.entity;
 
+import java.sql.Timestamp;
+
 import jakarta.persistence.metamodel.SingularAttribute;
 import jakarta.persistence.metamodel.StaticMetamodel;
-
-import java.sql.Timestamp;
 
 @StaticMetamodel(TodoInfoEntity.class)
 public abstract class TodoInfoEntity_ {

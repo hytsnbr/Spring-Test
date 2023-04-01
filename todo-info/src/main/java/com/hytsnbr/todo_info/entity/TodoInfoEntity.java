@@ -1,5 +1,8 @@
 package com.hytsnbr.todo_info.entity;
 
+import java.sql.Timestamp;
+import java.util.Objects;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,14 +11,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
-import lombok.Getter;
-
-import java.sql.Timestamp;
-import java.util.Objects;
 
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
+import lombok.Getter;
 
 import com.hytsnbr.todo_info.constant.Processing;
 
