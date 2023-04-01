@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base-common/spring_test.base-common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/base-common/spring_test.base-common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/steam-tool/spring_test.steam-tool.main.iml" filepath="$PROJECT_DIR$/.idea/modules/steam-tool/spring_test.steam-tool.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/steam/spring_test.steam.main.iml" filepath="$PROJECT_DIR$/.idea/modules/steam/spring_test.steam.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/todo-info/spring_test.todo-info.main.iml" filepath="$PROJECT_DIR$/.idea/modules/todo-info/spring_test.todo-info.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zipcode/spring_test.zipcode.main.iml" filepath="$PROJECT_DIR$/.idea/modules/zipcode/spring_test.zipcode.main.iml" />
+    </modules>
+  </component>
+</project>
