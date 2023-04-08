@@ -1,9 +1,20 @@
 plugins {
-    id 'org.springframework.boot' version '3.0.5'
-    id 'io.spring.dependency-management' version '1.1.0'
     id 'java'
     id 'idea'
+    id 'org.springframework.boot' version '3.0.5'
+    id 'io.spring.dependency-management' version '1.1.0'
     id 'org.sonarqube' version '4.0.0.2929'
+}
+
+bootJar {
+    enabled = false
+}
+jar {
+    enabled = false
+}
+
+bootRun {
+    enabled = false
 }
 
 allprojects {
@@ -57,29 +68,6 @@ subprojects {
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
         testImplementation 'io.projectreactor:reactor-test'
     }
-}
-
-dependencies {
-    // Spring Boot Starter
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-
-    // Spring Boot Devtools
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-
-    // H2 Database
-    runtimeOnly 'com.h2database:h2'
-
-    // Unit Test
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'io.projectreactor:reactor-test'
-
-    implementation project(':steam')
-    implementation project(':todo-info')
-    implementation project(':zipcode')
-}
-
-tasks.named('test') {
-    useJUnitPlatform()
 }
 
 sonar {
