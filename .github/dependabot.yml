@@ -17,8 +17,8 @@ updates:
     commit-message:
       prefix: update
       include: scope
-      labels:
-        - "dependabot"
+    labels:
+      - "dependabot"
     open-pull-requests-limit: 99
 
   - package-ecosystem: "gradle"
@@ -33,8 +33,8 @@ updates:
     commit-message:
       prefix: update
       include: scope
-      labels:
-        - "dependabot"
+    labels:
+      - "dependabot"
     open-pull-requests-limit: 99
 
   - package-ecosystem: "gradle"
@@ -49,8 +49,8 @@ updates:
     commit-message:
       prefix: update
       include: scope
-      labels:
-        - "dependabot"
+    labels:
+      - "dependabot"
     open-pull-requests-limit: 99
 
   - package-ecosystem: "gradle"
@@ -65,8 +65,8 @@ updates:
     commit-message:
       prefix: update
       include: scope
-      labels:
-        - "dependabot"
+    labels:
+      - "dependabot"
     open-pull-requests-limit: 99
 
   - package-ecosystem: "gradle"
@@ -81,8 +81,8 @@ updates:
     commit-message:
       prefix: update
       include: scope
-      labels:
-          - "dependabot"
+    labels:
+      - "dependabot"
     open-pull-requests-limit: 99
 
   - package-ecosystem: "gradle"
@@ -97,8 +97,8 @@ updates:
     commit-message:
       prefix: update
       include: scope
-      labels:
-          - "dependabot"
+    labels:
+      - "dependabot"
     open-pull-requests-limit: 99
 
   - package-ecosystem: "gradle"
@@ -113,8 +113,8 @@ updates:
     commit-message:
       prefix: update
       include: scope
-      labels:
-        - "dependabot"
+    labels:
+      - "dependabot"
     open-pull-requests-limit: 99
 
   - package-ecosystem: "gradle"
@@ -129,6 +129,6 @@ updates:
     commit-message:
       prefix: update
       include: scope
-      labels:
-        - "dependabot"
+    labels:
+      - "dependabot"
     open-pull-requests-limit: 99
