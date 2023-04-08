@@ -5,82 +5,130 @@
 
 version: 2
 updates:
-  - package-ecosystem: "gradle"
-    directory: /
-    schedule:
-      interval: "daily"
-      timezone: Asia/Tokyo
-    assignees:
-      - "hytsnbr"
-    reviewers:
-      - "hytsnbr"
-    commit-message:
-      prefix: update
-      include: scope
+    -   package-ecosystem: 'github-actions'
+        directory: /
+        schedule:
+            interval: "daily"
+            timezone: Asia/Tokyo
+        assignees:
+            - "hytsnbr"
+        reviewers:
+            - "hytsnbr"
+        commit-message:
+            prefix: update
+            include: scope
+        labels:
+            - "dependabot"
+        open-pull-requests-limit: 99
+
+    -   package-ecosystem: "gradle"
+        directory: /
+        schedule:
+            interval: "daily"
+            timezone: Asia/Tokyo
+        assignees:
+            - "hytsnbr"
+        reviewers:
+            - "hytsnbr"
+        commit-message:
+            prefix: update
+            include: scope
+        labels:
+            - "dependabot"
+        open-pull-requests-limit: 99
+
+    -   package-ecosystem: "gradle"
+        directory: web/
+        schedule:
+            interval: "daily"
+            timezone: Asia/Tokyo
+        assignees:
+            - "hytsnbr"
+        reviewers:
+            - "hytsnbr"
+        commit-message:
+            prefix: update
+            include: scope
+        labels:
+            - "dependabot"
+        open-pull-requests-limit: 99
+
+    -   package-ecosystem: "gradle"
+        directory: app/base-common/
+        schedule:
+            interval: "daily"
+            timezone: Asia/Tokyo
+        assignees:
+            - "hytsnbr"
+        reviewers:
+            - "hytsnbr"
+        commit-message:
+            prefix: update
+            include: scope
     labels:
-      - "dependabot"
+        - "dependabot"
     open-pull-requests-limit: 99
 
-  - package-ecosystem: "gradle"
-    directory: base-common/
+        -   package-ecosystem: "gradle"
+            directory: app/steam/
     schedule:
-      interval: "daily"
-      timezone: Asia/Tokyo
+        interval: "daily"
+        timezone: Asia/Tokyo
     assignees:
-      - "hytsnbr"
-    reviewers:
-      - "hytsnbr"
+        - "hytsnbr"
+        reviewers:
+            - "hytsnbr"
     commit-message:
-      prefix: update
-      include: scope
-    labels:
-      - "dependabot"
-    open-pull-requests-limit: 99
+        prefix: update
+        include: scope
+        labels:
+            - "dependabot"
+        open-pull-requests-limit: 99
 
-  - package-ecosystem: "gradle"
-    directory: steam/
+            -   package-ecosystem: "gradle"
+                directory: app/steam-tool/
     schedule:
-      interval: "daily"
-      timezone: Asia/Tokyo
+        interval: "daily"
+        timezone: Asia/Tokyo
     assignees:
-      - "hytsnbr"
-    reviewers:
-      - "hytsnbr"
-    commit-message:
-      prefix: update
-      include: scope
-    labels:
-      - "dependabot"
-    open-pull-requests-limit: 99
+        - "hytsnbr"
+        reviewers:
+            - "hytsnbr"
+        commit-message:
+            prefix: update
+            include: scope
+        labels:
+            - "dependabot"
+        open-pull-requests-limit: 99
 
-  - package-ecosystem: "gradle"
-    directory: todo-info/
-    schedule:
-      interval: "daily"
-      timezone: Asia/Tokyo
-    assignees:
-      - "hytsnbr"
-    reviewers:
-      - "hytsnbr"
-    commit-message:
-      prefix: update
-      include: scope
-    labels:
-      - "dependabot"
-    open-pull-requests-limit: 99
+            -   package-ecosystem: "gradle"
+                directory: app/todo-info/
+                schedule:
+                    interval: "daily"
+                    timezone: Asia/Tokyo
+                assignees:
+                    - "hytsnbr"
+                reviewers:
+                    - "hytsnbr"
+                commit-message:
+                    prefix: update
+                    include: scope
+                labels:
+                    - "dependabot"
+                open-pull-requests-limit: 99
 
-  - package-ecosystem: "gradle"
-    directory: zipcode/
-    schedule:
-      interval: "daily"
-      timezone: Asia/Tokyo
-    assignees:
-      - "hytsnbr"
-    reviewers:
-      - "hytsnbr"
-    commit-message:
-      prefix: update
-      include: scope
-    labels:
-      - "dependabot"
-    open-pull-requests-limit: 99
+            -   package-ecosystem: "gradle"
+                directory: app/zipcode/
+                schedule:
+                    interval: "daily"
+                    timezone: Asia/Tokyo
+                assignees:
+                    - "hytsnbr"
+                reviewers:
+                    - "hytsnbr"
+                commit-message:
+                    prefix: update
+                    include: scope
+        labels:
+            - "dependabot"
+        open-pull-requests-limit: 99
