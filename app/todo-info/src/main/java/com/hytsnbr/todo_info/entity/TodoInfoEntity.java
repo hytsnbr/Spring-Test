@@ -25,23 +25,33 @@ import com.hytsnbr.todo_info.constant.Processing;
 @Table(name = "todo_data")
 public class TodoInfoEntity {
     
+    public static final String COLUMN_NAME_ID = "id";
+    
+    public static final String COLUMN_NAME_PROCESS = "process";
+    
+    public static final String COLUMN_NAME_TEXT = "text";
+    
+    public static final String COLUMN_NAME_CREATE_AT = "create_at";
+    
+    public static final String COLUMN_NAME_UPDATE_AT = "update_at";
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = COLUMN_NAME_ID)
     private long id;
     
-    @Column(name = "process", nullable = false)
+    @Column(name = COLUMN_NAME_PROCESS, nullable = false)
     private Integer process = Processing.NOT_YET_STARTED.getValue();
     
-    @Column(name = "text", nullable = false)
+    @Column(name = COLUMN_NAME_TEXT, nullable = false)
     private String text;
     
     @CreationTimestamp
-    @Column(name = "create_at", updatable = false)
+    @Column(name = COLUMN_NAME_CREATE_AT, updatable = false)
     private Timestamp createAt;
     
     @UpdateTimestamp
-    @Column(name = "update_at")
+    @Column(name = COLUMN_NAME_UPDATE_AT)
     private Timestamp updateAt;
     
     public static TodoInfoEntity create(Integer process, String text) {
