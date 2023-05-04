@@ -1,15 +1,17 @@
 package com.hytsnbr.base_common.util;
 
+import jakarta.validation.constraints.NotNull;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class UtilTest {
+class UtilTest {
     
     @Test
-    @DisplayName("正数 絶対値")
+    @DisplayName("正数 桁数")
     void numberDigits_Plus() {
         
         int testValue = 12345;
@@ -21,7 +23,7 @@ public class UtilTest {
     }
     
     @Test
-    @DisplayName("負数 絶対値")
+    @DisplayName("負数 桁数")
     void numberDigits_Minus() {
         
         int testValue = -987654321;
@@ -32,9 +34,11 @@ public class UtilTest {
         assertEquals(expected, actual);
     }
     
+    @SuppressWarnings("DataFlowIssue")
     @Test
     @DisplayName("Util.getDigits 引数null")
     void numberDigits_Null() {
-        assertThrows(NullPointerException.class, () -> Util.getDigits(null));
+        assertThrows(NullPointerException.class, () -> Util.getDigits((@NotNull Integer) null));
+        assertThrows(NullPointerException.class, () -> Util.getDigits((@NotNull Long) null));
     }
 }
