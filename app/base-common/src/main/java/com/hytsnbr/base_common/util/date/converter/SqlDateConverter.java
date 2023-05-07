@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+import com.hytsnbr.base_common.constant.DateFormat;
+
 public final class SqlDateConverter extends AbstractDateConverter<Date> {
     
     public SqlDateConverter() {
@@ -18,7 +20,7 @@ public final class SqlDateConverter extends AbstractDateConverter<Date> {
     }
     
     @Override
-    public Date fromString(String target, String pattern)
+    public Date fromString(String target, DateFormat pattern)
         throws ParseException, NullPointerException, IllegalArgumentException {
         
         // Null Check
@@ -26,15 +28,15 @@ public final class SqlDateConverter extends AbstractDateConverter<Date> {
         Objects.requireNonNull(pattern);
         
         // Empty Check
-        if (target.equals("") || pattern.equals("")) {
+        if (target.equals("")) {
             throw new IllegalArgumentException("");
         }
         
         // Converting
-        SimpleDateFormat format = new SimpleDateFormat(pattern);
+        SimpleDateFormat format = new SimpleDateFormat(pattern.getFormat());
         java.util.Date date = format.parse(target);
         
-        return (Date) date;
+        return new Date(date.getTime());
     }
     
     @Override
@@ -54,8 +56,8 @@ public final class SqlDateConverter extends AbstractDateConverter<Date> {
     }
     
     @Override
-    public Timestamp toTimeStamp(Date target) {
-        return Timestamp.from(target.toInstant());
+    public Timestamp toTimestamp(Date target) {
+        return new Timestamp(target.getTime());
     }
     
     @Override
@@ -65,8 +67,7 @@ public final class SqlDateConverter extends AbstractDateConverter<Date> {
     
     @Override
     public LocalDateTime toLocalDateTime(Date target) {
-        return target.toLocalDate()
-                     .atStartOfDay();
+        return target.toLocalDate().atStartOfDay();
     }
     
     @Override
