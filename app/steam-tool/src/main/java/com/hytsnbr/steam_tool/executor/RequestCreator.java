@@ -37,8 +37,7 @@ public final class RequestCreator extends AbstractCreator {
     public void execute() throws SystemException {
         try {
             super.cleanResultDirectory(GenerateFileType.REQUEST);
-        } catch (
-            IOException e) {
+        } catch (IOException e) {
             throw new SystemException("ファイル生成先のクリーンアップに失敗しました");
         }
         
