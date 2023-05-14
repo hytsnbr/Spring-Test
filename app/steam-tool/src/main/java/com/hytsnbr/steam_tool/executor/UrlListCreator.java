@@ -46,17 +46,26 @@ public final class UrlListCreator extends AbstractCreator {
         Context context = new VelocityContext();
         context.put("className", "SteamApiEndpoints");
         
-        List<Map<String, String>> params = new ArrayList<>();
+        List<Map<String, Object>> params = new ArrayList<>();
         for (Interface apiInterface : apiInterfaceList) {
+            Map<String, Object> param = new HashMap<>();
+            param.put("interfaceName", apiInterface.getName().replace("_", ""));
+            
+            List<Map<String, String>> fields = new ArrayList<>();
             apiInterface.getMethods().forEach(method -> {
-                Map<String, String> param = new HashMap<>();
-                param.put("fieldName", CaseFormat.UPPER_CAMEL.to(CaseFormat.UPPER_UNDERSCORE, method.getName()));
-                param.put("value",
+                Map<String, String> field = new HashMap<>();
+                field.put("name",
+                    CaseFormat.UPPER_CAMEL.to(CaseFormat.UPPER_UNDERSCORE, method.getName())
+                        + "_" + String.format("V%d", method.getVersion())
+                );
+                field.put("value",
                     String.format(URL_FORMAT, apiInterface.getName(), method.getName(), method.getVersion())
                 );
                 
-                params.add(param);
+                fields.add(field);
             });
+            param.put("fields", fields);
+            params.add(param);
         }
         context.put("params", params);
         
