@@ -3,9 +3,11 @@ package com.hytsnbr.steam_tool;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 import com.hytsnbr.steam_tool.service.GeneratorService;
 
+@ConfigurationPropertiesScan(value = "com.hytsnbr.base_common.config.property")
 @SpringBootApplication(scanBasePackages = {
     "com.hytsnbr.base_common",
     "com.hytsnbr.steam",

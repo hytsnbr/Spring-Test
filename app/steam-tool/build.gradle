@@ -9,11 +9,10 @@ dependencies {
     implementation 'com.google.guava:guava:31.1-jre'
 
     implementation(project(':app:base-common')) {
-        exclude(group: 'org.springframework.boot', module: 'spring-boot-starter-data-jdbc')
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-data-jdbc'
     }
-    implementation(project(':app:steam')) {
-        exclude(group: 'org.springframework.boot', module: 'spring-boot-starter-data-jdbc')
-    }
+
+    implementation project(':app:steam')
 }
 
 tasks.named('test') {
