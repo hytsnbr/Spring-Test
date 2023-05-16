@@ -8,7 +8,7 @@ import lombok.Getter;
 public enum GenerateFileType {
     
     REQUEST("request", "request.vm"),
-    INTERFACE("interface", "interface.vm"),
+    INTERFACE("api", "interface.vm"),
     URL("url", "url.vm"),
     ;
     
