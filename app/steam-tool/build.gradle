@@ -11,8 +11,6 @@ dependencies {
     implementation(project(':app:base-common')) {
         exclude group: 'org.springframework.boot', module: 'spring-boot-starter-data-jdbc'
     }
-
-    implementation project(':app:steam')
 }
 
 tasks.named('test') {
