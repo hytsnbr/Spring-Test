@@ -34,6 +34,9 @@ jobs:
   Analyze:
     needs: Build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./
 
     steps:
       - name: Cache SonarCloud packages
@@ -44,7 +47,6 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar
 
       - name: Analyze
-        working-directory: ./
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
