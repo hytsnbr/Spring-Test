@@ -1,5 +1,11 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
 plugins {
     id("spring-boot-conventions")
+}
+
+tasks.named<BootJar>("bootJar") {
+    enabled = false
 }
 
 dependencies {

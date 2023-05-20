@@ -1,5 +1,3 @@
-import org.springframework.boot.gradle.tasks.bundling.BootJar
-
 plugins {
     id("java-common-conventions")
     id("org.springframework.boot")
@@ -10,23 +8,16 @@ repositories {
     mavenCentral()
 }
 
-tasks.named("bootRun") {
-    enabled = false
-}
-
-tasks.named<BootJar>("bootJar") {
-    enabled = false
-}
-tasks.named<Jar>("jar") {
-    enabled = false
-}
-
 dependencies {
     // Spring Boot Starter
     implementation("org.springframework.boot:spring-boot-starter")
 
     // Spring Boot Configuration Processor
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+
+    // Lombok
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
 
     // Unit Test
     testImplementation("org.springframework.boot:spring-boot-starter-test")

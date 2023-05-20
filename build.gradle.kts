@@ -1,5 +1,4 @@
 plugins {
-    id("spring-boot-conventions")
     id("org.sonarqube") version "4.0.0.2929"
 }
 
