@@ -3,6 +3,11 @@ package com.hytsnbr.steam_tool.dao;
 public final class ${className} {
 #foreach($param in $params)
 
-    public static final String ${param.fieldName} = "${param.value}";
+public static class ${param.interfaceName} {
+    #foreach($field in $param.fields)
+
+    public static final String ${field.name} = "${field.value}";
+    #end
+}
 #end
 }

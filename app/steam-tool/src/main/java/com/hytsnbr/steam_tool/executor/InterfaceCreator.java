@@ -8,16 +8,28 @@ import java.util.Map;
 
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.context.Context;
+import org.springframework.stereotype.Component;
 
 import com.google.common.base.CaseFormat;
+import com.hytsnbr.base_common.config.property.ApiKey;
 import com.hytsnbr.base_common.exception.common.SystemException;
 import com.hytsnbr.steam_tool.constant.GenerateFileType;
 import com.hytsnbr.steam_tool.dao.SteamDao;
 import com.hytsnbr.steam_tool.dto.GetSupportedApiListResponse.ApiList.Interface;
 
-public class InterfaceCreator extends AbstractCreator {
+@Component
+public final class InterfaceCreator extends AbstractCreator {
     
     private static final String FILE_NAME = "%s.java";
+    
+    private final ApiKey apiKey;
+    
+    /**
+     * コンストラクタ
+     */
+    public InterfaceCreator(ApiKey apiKey) {
+        this.apiKey = apiKey;
+    }
     
     @Override
     public void execute() throws SystemException {
@@ -27,7 +39,7 @@ public class InterfaceCreator extends AbstractCreator {
             throw new SystemException("ファイル生成先のクリーンアップに失敗しました");
         }
         
-        final List<Interface> apiInterfaceList = SteamDao.getSupportedApiList().getApiInterfaceList();
+        final List<Interface> apiInterfaceList = SteamDao.getSupportedApiList(apiKey.getSteam()).getApiInterfaceList();
         
         for (Interface apiInterface : apiInterfaceList) {
             final String interfaceName = apiInterface.getName().replace("_", "");
