@@ -1,47 +1,32 @@
 package com.hytsnbr.steam_tool;
 
-import java.util.Properties;
-
-import org.apache.velocity.app.Velocity;
-import org.apache.velocity.runtime.RuntimeConstants;
-import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
-import com.hytsnbr.base_common.exception.common.SystemException;
-import com.hytsnbr.steam_tool.executor.InterfaceCreator;
-import com.hytsnbr.steam_tool.executor.RequestCreator;
-import com.hytsnbr.steam_tool.executor.UrlListCreator;
+import com.hytsnbr.steam_tool.service.GeneratorService;
 
 @ConfigurationPropertiesScan(value = "com.hytsnbr.base_common.config.property")
-@SpringBootApplication
-public class SteamToolApplication {
+@SpringBootApplication(scanBasePackages = {
+    "com.hytsnbr.base_common",
+    "com.hytsnbr.steam",
+    "com.hytsnbr.steam_tool"
+})
+public class SteamToolApplication implements CommandLineRunner {
     
-    private static final Logger LOGGER = LoggerFactory.getLogger(SteamToolApplication.class);
+    private final GeneratorService generatorService;
+    
+    public SteamToolApplication(GeneratorService generatorService) {
+        this.generatorService = generatorService;
+    }
     
     public static void main(String[] args) {
-        // Apache Velocity 設定
-        Properties prop = new Properties();
-        prop.setProperty(RuntimeConstants.RESOURCE_LOADERS, "classpath");
-        prop.setProperty("resource.loader.classpath.class", ClasspathResourceLoader.class.getName());
-        Velocity.init(prop);
-        
-        try {
-            // 生成処理
-            RequestCreator requestCreator = new RequestCreator();
-            requestCreator.execute();
-            
-            InterfaceCreator interfaceCreator = new InterfaceCreator();
-            interfaceCreator.execute();
-            
-            UrlListCreator urlListCreator = new UrlListCreator();
-            urlListCreator.execute();
-            
-            LOGGER.info("生成に成功しました");
-        } catch (SystemException e) {
-            LOGGER.error("生成に失敗しました", e);
-        }
+        SpringApplication.run(SteamToolApplication.class);
+    }
+    
+    @Override
+    public void run(String... args) throws Exception {
+        generatorService.generate();
     }
 }
