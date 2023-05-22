@@ -1,6 +1,6 @@
 package com.hytsnbr.todo_info.constant;
 
-import com.hytsnbr.todo_info.entity.TodoInfoEntity_;
+import com.hytsnbr.todo_info.entity.TodoInfoEntity;
 
 public final class TodoInfoPageableConst {
     
@@ -11,7 +11,7 @@ public final class TodoInfoPageableConst {
     public static final int SIZE_MAX = 100;
     
     /** ソート対象 */
-    public static final String SORT_DEFAULT = TodoInfoEntity_.CREATE_AT;
+    public static final String SORT_DEFAULT = TodoInfoEntity.COLUMN_NAME_CREATE_AT;
     
     /** 検索での最大表示件数 */
     public static final int SEARCH_CAN_DISPLAY_COUNT = 1000;

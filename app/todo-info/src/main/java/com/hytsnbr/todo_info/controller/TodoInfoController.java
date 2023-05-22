@@ -24,7 +24,7 @@ import com.hytsnbr.todo_info.constant.TodoInfoPageableConst;
 import com.hytsnbr.todo_info.dto.TodoInfoRequest;
 import com.hytsnbr.todo_info.dto.TodoInfoResponse;
 import com.hytsnbr.todo_info.dto.TodoInfoSearchCondition;
-import com.hytsnbr.todo_info.entity.TodoInfoEntity_;
+import com.hytsnbr.todo_info.entity.TodoInfoEntity;
 import com.hytsnbr.todo_info.service.TodoInfoService;
 
 @Validated
@@ -43,7 +43,9 @@ public class TodoInfoController extends BaseController {
         @ModelAttribute
         TodoInfoSearchCondition condition,
         @PagerSizeLimit(max = TodoInfoPageableConst.SIZE_MAX)
-        @AllowedSortProperties(properties = { TodoInfoEntity_.ID, TodoInfoEntity_.CREATE_AT, TodoInfoEntity_.ID })
+        @AllowedSortProperties(properties = {
+            TodoInfoEntity.COLUMN_NAME_ID, TodoInfoEntity.COLUMN_NAME_CREATE_AT, TodoInfoEntity.COLUMN_NAME_ID
+        })
         @PageableDefault(size = TodoInfoPageableConst.SIZE_DEFAULT, sort = TodoInfoPageableConst.SORT_DEFAULT)
         Pageable pageable
     ) {
@@ -53,7 +55,9 @@ public class TodoInfoController extends BaseController {
     @GetMapping("/list")
     public List<TodoInfoResponse> list(
         @PagerSizeLimit(max = TodoInfoPageableConst.SIZE_MAX)
-        @AllowedSortProperties(properties = { TodoInfoEntity_.ID, TodoInfoEntity_.CREATE_AT, TodoInfoEntity_.ID })
+        @AllowedSortProperties(properties = {
+            TodoInfoEntity.COLUMN_NAME_ID, TodoInfoEntity.COLUMN_NAME_CREATE_AT, TodoInfoEntity.COLUMN_NAME_ID
+        })
         @PageableDefault(size = TodoInfoPageableConst.SIZE_DEFAULT, sort = TodoInfoPageableConst.SORT_DEFAULT)
         Pageable pageable
     ) {
