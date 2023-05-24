@@ -46,8 +46,7 @@ public final class SqlDateConverter extends AbstractDateConverter<Date> {
     
     @Override
     public java.util.Date toUtilDate(Date target) {
-        // java.sqi.Date は java.util.Date のラッパーなのでそのまま返却可能
-        return target;
+        return new java.util.Date(target.getTime());
     }
     
     @Override
