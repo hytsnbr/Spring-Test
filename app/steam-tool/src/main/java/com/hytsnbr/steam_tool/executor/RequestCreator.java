@@ -53,6 +53,7 @@ public final class RequestCreator extends AbstractCreator {
                     Map<String, String> param = new HashMap<>();
                     param.put("required", String.valueOf(parameter.isOptional()));
                     param.put("type", DataType.toEnum(parameter.getType()).getClassName());
+                    param.put("typeAsList", parameter.getName().match("\[.+\]")));
                     param.put("name", CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, parameter.getName()));
                     param.put("isDataTypeEnum", String.valueOf(StringUtils.equals(parameter.getType(), "{enum}")));
                     param.put("jsonPropertyName", parameter.getName());
