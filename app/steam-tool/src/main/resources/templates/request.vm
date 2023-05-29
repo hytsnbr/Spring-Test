@@ -9,6 +9,10 @@ public class ${className}Request {
     @NotNull
     #end
     @JsonProperty("${param.jsonPropertyName}")
+    #if(${param.typeAsList} == "true")
     private ${param.type} ${param.name};
+    #else
+    private List<${param.type}> ${param.name};
+    #end
 #end
 }
