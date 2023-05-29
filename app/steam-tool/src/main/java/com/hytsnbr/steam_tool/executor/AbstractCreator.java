@@ -71,7 +71,7 @@ public abstract sealed class AbstractCreator permits InterfaceCreator, RequestCr
             }
             template.merge(context, bufferedWriter);
         } catch (Exception e) {
-            logger.errorr(e);
+            logger.error(e);
             
             throw new SystemException(e.getMessage());
         }
