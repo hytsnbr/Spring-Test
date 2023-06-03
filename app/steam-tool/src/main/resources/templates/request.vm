@@ -8,7 +8,11 @@ public class ${className}Request {
     #if(${param.required} == "true")
     @NotNull
     #end
-    @JsonProperty("${param.jsonPropertyName}")
+@JsonProperty("${param.jsonPropertyName}")
+    #if(${param.typeAsList} == "true")
+    private List<${param.type}> ${param.name};
+    #else
     private ${param.type} ${param.name};
+    #end
 #end
 }
