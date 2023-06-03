@@ -54,7 +54,7 @@ public final class RequestCreator extends AbstractCreator {
                     param.put("type", DataType.toEnum(parameter.getType()).getClassName());
                     boolean typeAsList = parameter.getName().matches("^.+\\[.+]");
                     param.put("typeAsList", String.valueOf(typeAsList));
-                    String name = typeAsList ? parameter.getName().replaceAll("\\[.+]", "") : parameter.getName();
+                    String name = typeAsList ? parameter.getName().replaceAll("^\\w+\\[\\d]$, "") : parameter.getName();
                     param.put("name", CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, name));
                     param.put("jsonPropertyName", parameter.getName());
                     
