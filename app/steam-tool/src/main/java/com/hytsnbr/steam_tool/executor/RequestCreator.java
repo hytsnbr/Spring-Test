@@ -52,7 +52,7 @@ public final class RequestCreator extends AbstractCreator {
                     Map<String, String> param = new HashMap<>();
                     param.put("required", String.valueOf(parameter.isOptional()));
                     param.put("type", DataType.toEnum(parameter.getType()).getClassName());
-                    boolean typeAsList = parameter.getName().matches("^.+\\[.+]");
+                    boolean typeAsList = parameter.getName().matches("^\\w+\\[\\d]$");
                     param.put("typeAsList", String.valueOf(typeAsList));
                     String name = typeAsList
                                   ? parameter.getName().replaceAll("^\\w+\\[\\d]$", "")
