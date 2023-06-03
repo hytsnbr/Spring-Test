@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.context.Context;
 import org.springframework.stereotype.Component;
@@ -53,8 +52,12 @@ public final class RequestCreator extends AbstractCreator {
                     Map<String, String> param = new HashMap<>();
                     param.put("required", String.valueOf(parameter.isOptional()));
                     param.put("type", DataType.toEnum(parameter.getType()).getClassName());
-                    param.put("name", CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, parameter.getName()));
-                    param.put("isDataTypeEnum", String.valueOf(StringUtils.equals(parameter.getType(), "{enum}")));
+                    boolean typeAsList = parameter.getName().matches("^\\w+\\[\\d]$");
+                    param.put("typeAsList", String.valueOf(typeAsList));
+                    String name = typeAsList
+                                  ? parameter.getName().replaceAll("^\\w+\\[\\d]$", "")
+                                  : parameter.getName();
+                    param.put("name", CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, name));
                     param.put("jsonPropertyName", parameter.getName());
                     
                     params.add(param);
