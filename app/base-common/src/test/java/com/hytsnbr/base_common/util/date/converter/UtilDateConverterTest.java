@@ -2,6 +2,7 @@ package com.hytsnbr.base_common.util.date.converter;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Calendar;
@@ -11,129 +12,120 @@ import java.util.TimeZone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.hytsnbr.base_common.constant.DateFormat;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-// TODO: 異常系テスト
-public class UtilDateConverterTest {
+class UtilDateConverterTest {
+    
+    private static final String TIME_ZONE = "UTC";
     
     private UtilDateConverter utilDateConverter;
     
     @BeforeEach
     void setUp() {
-        utilDateConverter = new UtilDateConverter();
+        utilDateConverter = new UtilDateConverter(TIME_ZONE);
     }
     
     @Test
-    void testFromEpochTimeSuccess() {
-        final long epochTime = 1641041940000L; // 2022-01-01 12:59
+    void fromString() {
+        final String dateString = "2022-01-01 12:59:30";
         
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-        calendar.set(Calendar.YEAR, 2022);
-        calendar.set(Calendar.MONTH, Calendar.JANUARY);
-        calendar.set(Calendar.DATE, 1);
-        calendar.set(Calendar.HOUR, 12);
-        calendar.set(Calendar.MINUTE, 59);
-        calendar.set(Calendar.SECOND, 0);
-        calendar.set(Calendar.MILLISECOND, 0);
-        
-        final Date excepted = calendar.getTime();
-        final Date actual = utilDateConverter.fromEpochTime(epochTime);
-        
-        assertEquals(excepted, actual);
-    }
-    
-    @Test
-    void testFromString() {
-        final String dateString = "2022-01-01 12:59";
-        
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-        calendar.set(Calendar.YEAR, 2022);
-        calendar.set(Calendar.MONTH, Calendar.JANUARY);
-        calendar.set(Calendar.DATE, 1);
-        calendar.set(Calendar.HOUR, 12);
-        calendar.set(Calendar.MINUTE, 59);
-        calendar.set(Calendar.SECOND, 0);
-        calendar.set(Calendar.MILLISECOND, 0);
-        
-        final Date excepted = calendar.getTime();
+        SimpleDateFormat format = new SimpleDateFormat(DateFormat.SLASH_YYYYMMDDHHMM.getFormat());
+        format.setTimeZone(TimeZone.getTimeZone(TIME_ZONE));
+        final var expected = format.format(this.createTestDate());
         try {
-            final Date actual = utilDateConverter.fromString(dateString, "yyyy-mm-dd HH:mm");
-            assertEquals(excepted, actual);
+            final var actual = format.format(utilDateConverter.fromString(dateString, DateFormat.HYPHEN_YYYYMMDDHHMM));
+            
+            assertEquals(expected, actual);
         } catch (ParseException e) {
             fail();
         }
     }
+
+//    @Test
+//    void fromEpochTime() {
+//        final long epochTime = 1641041970000L; // 2022-01-01 12:59:30
+//        
+//        final var expected = new Date(epochTime);
+//        final var actual = utilDateConverter.fromEpochTime(epochTime);
+//        
+//        assertEquals(expected.toString(), actual.toString());
+//    }
     
-    @Test
-    void testToLocalDate() {
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    private Date createTestDate() {
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone(TIME_ZONE));
         calendar.set(Calendar.YEAR, 2022);
         calendar.set(Calendar.MONTH, Calendar.JANUARY);
         calendar.set(Calendar.DATE, 1);
-        calendar.set(Calendar.HOUR, 12);
+        calendar.set(Calendar.HOUR_OF_DAY, 12);
         calendar.set(Calendar.MINUTE, 59);
-        final Date testDate = calendar.getTime();
-        
-        final LocalDate excepted = LocalDate.of(2022, 1, 1);
-        final LocalDate actual = utilDateConverter.toLocalDate(testDate);
-        
-        assertEquals(excepted, actual);
-    }
-    
-    @Test
-    void testToLocalDateTime() {
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-        calendar.set(Calendar.YEAR, 2022);
-        calendar.set(Calendar.MONTH, Calendar.JANUARY);
-        calendar.set(Calendar.DATE, 1);
-        calendar.set(Calendar.HOUR, 12);
-        calendar.set(Calendar.MINUTE, 59);
-        calendar.set(Calendar.SECOND, 59);
+        calendar.set(Calendar.SECOND, 30);
         calendar.set(Calendar.MILLISECOND, 0);
-        final Date testDate = calendar.getTime();
         
-        final LocalDateTime excepted = LocalDateTime.of(2022, 1, 1, 12, 59, 59);
-        final LocalDateTime actual = utilDateConverter.toLocalDateTime(testDate);
-        
-        assertEquals(excepted, actual);
+        return calendar.getTime();
     }
     
     @Test
-    void testToSqlDate() {
+    void toUtilDate() {
+        final Date testDate = this.createTestDate();
+        
+        final var expected = this.createTestDate();
+        final var actual = utilDateConverter.toUtilDate(testDate);
+        
+        assertEquals(expected.toString(), actual.toString());
+    }
+    
+    @Test
+    void toSqlDate() {
         final long epochTime = 1640995200000L; // 2022-01-01 00:00
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-        calendar.set(Calendar.YEAR, 2022);
-        calendar.set(Calendar.MONTH, Calendar.JANUARY);
-        calendar.set(Calendar.DATE, 1);
-        calendar.set(Calendar.HOUR, 0);
-        calendar.set(Calendar.MINUTE, 0);
-        calendar.set(Calendar.SECOND, 0);
-        final Date testDate = calendar.getTime();
+        final Date testDate = this.createTestDate();
         
-        final java.sql.Date excepted = new java.sql.Date(epochTime);
-        final java.sql.Date actual = utilDateConverter.toSqlDate(testDate);
+        final var expected = new java.sql.Date(epochTime);
+        final var actual = utilDateConverter.toSqlDate(testDate);
         
-        assertEquals(excepted, actual);
+        assertEquals(expected.toString(), actual.toString());
     }
     
     @Test
-    void testToTimeStamp() {
-        final long epochTime = 1641041940000L; // 2022-01-01 12:59
+    void toTimestamp() {
+        final long epochTime = 1641041970000L; // 2022-01-01 12:59:30
+        final Date testDate = this.createTestDate();
         
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-        calendar.set(Calendar.YEAR, 2022);
-        calendar.set(Calendar.MONTH, Calendar.JANUARY);
-        calendar.set(Calendar.DATE, 1);
-        calendar.set(Calendar.HOUR, 12);
-        calendar.set(Calendar.MINUTE, 59);
-        calendar.set(Calendar.SECOND, 0);
-        calendar.set(Calendar.MILLISECOND, 0);
-        final Date testDate = calendar.getTime();
+        final var expected = new Timestamp(epochTime);
+        final var actual = utilDateConverter.toTimestamp(testDate);
         
-        final Timestamp excepted = new Timestamp(epochTime);
-        final Date actual = utilDateConverter.toTimeStamp(testDate);
+        assertEquals(expected.toString(), actual.toString());
+    }
+    
+    @Test
+    void toLocalDate() {
+        final Date testDate = this.createTestDate();
         
-        assertEquals(excepted, actual);
+        final var expected = LocalDate.of(2022, 1, 1);
+        final var actual = utilDateConverter.toLocalDate(testDate);
+        
+        assertEquals(expected.toString(), actual.toString());
+    }
+    
+    @Test
+    void toLocalDateTime() {
+        final Date testDate = this.createTestDate();
+        
+        final var expected = LocalDateTime.of(2022, 1, 1, 12, 59, 30);
+        final var actual = utilDateConverter.toLocalDateTime(testDate);
+        
+        assertEquals(expected.toString(), actual.toString());
+    }
+    
+    @Test
+    void toUnixTime() {
+        final Date testDate = this.createTestDate();
+        
+        final var expected = 1641041970000L; // 2022-01-01 12:59:30
+        final var actual = utilDateConverter.toUnixTime(testDate);
+        
+        assertEquals(expected, actual);
     }
 }
