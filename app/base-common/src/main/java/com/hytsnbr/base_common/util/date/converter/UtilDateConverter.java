@@ -9,6 +9,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
+import com.hytsnbr.base_common.constant.DateFormat;
+
 public final class UtilDateConverter extends AbstractDateConverter<Date> {
     
     public UtilDateConverter() {
@@ -19,7 +21,7 @@ public final class UtilDateConverter extends AbstractDateConverter<Date> {
     }
     
     @Override
-    public Date fromString(String target, String pattern)
+    public Date fromString(String target, DateFormat pattern)
         throws ParseException, NullPointerException, IllegalArgumentException {
         
         // Null Check
@@ -27,7 +29,8 @@ public final class UtilDateConverter extends AbstractDateConverter<Date> {
         Objects.requireNonNull(pattern);
         
         // Converting
-        SimpleDateFormat format = new SimpleDateFormat(pattern);
+        SimpleDateFormat format = new SimpleDateFormat(pattern.getFormat());
+        format.setTimeZone(timeZone);
         return format.parse(target);
     }
     
@@ -60,32 +63,22 @@ public final class UtilDateConverter extends AbstractDateConverter<Date> {
     }
     
     @Override
-    public Timestamp toTimeStamp(Date target) {
-        return Timestamp.from(target.toInstant());
+    public Timestamp toTimestamp(Date target) {
+        return Timestamp.from(target.toInstant().atZone(timeZone.toZoneId()).toInstant());
     }
     
     @Override
     public LocalDate toLocalDate(Date target) {
-        
-        // Java8 まで
-        // LocalDate localDate = target.toInstant().atZone(timeZone.toZoneId()).toLocalDate();
-        
-        // Java9 から
         return LocalDate.ofInstant(target.toInstant(), timeZone.toZoneId());
     }
     
     @Override
     public LocalDateTime toLocalDateTime(Date target) {
-        
-        // Java8 まで
-        // LocalDateTime localDateTime = target.toInstant().atZone(timeZone.toZoneId()).toLocalDateTime();
-        
-        // Java9 から
         return LocalDateTime.ofInstant(target.toInstant(), timeZone.toZoneId());
     }
     
     @Override
     public long toUnixTime(Date target) {
-        return target.getTime();
+        return target.toInstant().atZone(timeZone.toZoneId()).toEpochSecond() * 1000;
     }
 }

@@ -6,9 +6,9 @@ import com.hytsnbr.base_common.util.date.converter.SqlDateConverter;
 import com.hytsnbr.base_common.util.date.converter.TimestampConverter;
 import com.hytsnbr.base_common.util.date.converter.UtilDateConverter;
 
-public final class DateUtil {
+public final class DateConvertUtil {
     
-    private DateUtil() {
+    private DateConvertUtil() {
         throw new IllegalStateException("Utility class");
     }
     

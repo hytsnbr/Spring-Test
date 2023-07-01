@@ -9,10 +9,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TimeUtilTest {
+class TimeUtilTest {
     
     @Test
-    @DisplayName("java.time.LocalDate 4月")
+    @DisplayName("年度取得 引数LocalDate 4月")
     void getNendo_from_LocalDate_4月() {
         
         LocalDate date = LocalDate.of(2022, 4, 1);
@@ -24,7 +24,7 @@ public class TimeUtilTest {
     }
     
     @Test
-    @DisplayName("java.time.LocalDate 3月")
+    @DisplayName("年度取得 引数LocalDate 3月")
     void getNendo_from_LocalDate_3月() {
         
         LocalDate date = LocalDate.of(2022, 3, 31);
@@ -36,7 +36,7 @@ public class TimeUtilTest {
     }
     
     @Test
-    @DisplayName("java.util.Date 4月")
+    @DisplayName("年度取得 引数UtilDate 4月")
     void getNendo_from_UtilDate_4月() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR, 2022);
@@ -51,7 +51,7 @@ public class TimeUtilTest {
     }
     
     @Test
-    @DisplayName("java.util.Date 3月")
+    @DisplayName("年度取得 引数UtilDate 3月")
     void getNendo_from_UtilDate_3月() {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR, 2022);

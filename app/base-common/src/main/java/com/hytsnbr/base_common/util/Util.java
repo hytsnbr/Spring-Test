@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hytsnbr.base_common.exception.common.SystemException;
 
 /**
  * 汎用ユーティリティ
@@ -40,6 +41,17 @@ public final class Util {
      * @return 桁数
      */
     public static int getDigits(@NotNull Integer number) {
+        return getDigits(number.longValue());
+    }
+    
+    /**
+     * 整数値 桁数取得
+     *
+     * @param number 整数値
+     *
+     * @return 桁数
+     */
+    public static int getDigits(@NotNull Long number) {
         Objects.requireNonNull(number);
         
         return String.valueOf(Math.abs(number)).length();
@@ -56,11 +68,10 @@ public final class Util {
         String jsonStr;
         try {
             jsonStr = mapper.writeValueAsString(targetObject);
-            return mapper.readValue(jsonStr, new TypeReference<>() {
-            });
+            return mapper.readValue(jsonStr, new TypeReference<>() {});
         } catch (JsonProcessingException e) {
             logger.error("", e);
-            throw new RuntimeException("Can not convert object to map.");
+            throw new SystemException("Can not convert object to map.");
         }
     }
 }

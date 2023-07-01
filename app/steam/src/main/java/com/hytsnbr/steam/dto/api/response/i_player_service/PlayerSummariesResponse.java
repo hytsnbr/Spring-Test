@@ -6,7 +6,7 @@ import java.util.List;
 import lombok.Data;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.hytsnbr.base_common.util.date.DateUtil;
+import com.hytsnbr.base_common.util.date.DateConvertUtil;
 
 @Data
 public class PlayerSummariesResponse {
@@ -84,11 +84,11 @@ public class PlayerSummariesResponse {
         private int locCityId;
         
         public LocalDate getLastLogoff() {
-            return DateUtil.localDate().fromEpochTime(this.lastLogoff);
+            return DateConvertUtil.localDate().fromEpochTime(this.lastLogoff);
         }
         
         public LocalDate getTimeCreated() {
-            return DateUtil.localDate().fromEpochTime(this.timeCreated);
+            return DateConvertUtil.localDate().fromEpochTime(this.timeCreated);
         }
     }
 }

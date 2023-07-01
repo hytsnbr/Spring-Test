@@ -1,16 +1,17 @@
 package com.hytsnbr.base_common.util.date.converter;
 
-import java.sql.Date;
 import java.sql.Timestamp;
-import java.text.ParseException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
-public class LocalDateTimeConverter extends AbstractDateConverter<LocalDateTime> {
+import com.hytsnbr.base_common.constant.DateFormat;
+
+public final class LocalDateTimeConverter extends AbstractDateConverter<LocalDateTime> {
     
     public LocalDateTimeConverter() {
     }
@@ -20,9 +21,9 @@ public class LocalDateTimeConverter extends AbstractDateConverter<LocalDateTime>
     }
     
     @Override
-    public LocalDateTime fromString(String target, String pattern)
-        throws ParseException, NullPointerException, IllegalArgumentException {
-        return LocalDateTime.parse(target, DateTimeFormatter.ofPattern(pattern));
+    public LocalDateTime fromString(String target, DateFormat pattern)
+        throws NullPointerException, IllegalArgumentException {
+        return LocalDateTime.parse(target, DateTimeFormatter.ofPattern(pattern.getFormat()));
     }
     
     @Override
@@ -31,18 +32,17 @@ public class LocalDateTimeConverter extends AbstractDateConverter<LocalDateTime>
     }
     
     @Override
-    public java.util.Date toUtilDate(LocalDateTime target) {
-        return java.util.Date.from(ZonedDateTime.of(target, ZoneId.systemDefault())
-                                                .toInstant());
+    public Date toUtilDate(LocalDateTime target) {
+        return Date.from(ZonedDateTime.of(target, ZoneId.systemDefault()).toInstant());
     }
     
     @Override
-    public Date toSqlDate(LocalDateTime target) {
-        return Date.valueOf(target.toLocalDate());
+    public java.sql.Date toSqlDate(LocalDateTime target) {
+        return java.sql.Date.valueOf(target.toLocalDate());
     }
     
     @Override
-    public Timestamp toTimeStamp(LocalDateTime target) {
+    public Timestamp toTimestamp(LocalDateTime target) {
         return Timestamp.valueOf(target);
     }
     

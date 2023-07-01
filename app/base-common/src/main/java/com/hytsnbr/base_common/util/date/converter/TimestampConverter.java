@@ -1,15 +1,17 @@
 package com.hytsnbr.base_common.util.date.converter;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Objects;
 
-public class TimestampConverter extends AbstractDateConverter<Timestamp> {
+import com.hytsnbr.base_common.constant.DateFormat;
+
+public final class TimestampConverter extends AbstractDateConverter<Timestamp> {
     
     public TimestampConverter() {
     }
@@ -19,7 +21,7 @@ public class TimestampConverter extends AbstractDateConverter<Timestamp> {
     }
     
     @Override
-    public Timestamp fromString(String target, String pattern)
+    public Timestamp fromString(String target, DateFormat pattern)
         throws ParseException, NullPointerException, IllegalArgumentException {
         
         // Null Check
@@ -27,15 +29,15 @@ public class TimestampConverter extends AbstractDateConverter<Timestamp> {
         Objects.requireNonNull(pattern);
         
         // Empty Check
-        if (target.equals("") || pattern.equals("")) {
+        if (target.equals("")) {
             throw new IllegalArgumentException("");
         }
         
         // Converting
-        SimpleDateFormat format = new SimpleDateFormat(pattern);
-        java.util.Date date = format.parse(target);
+        SimpleDateFormat format = new SimpleDateFormat(pattern.getFormat());
+        Date date = format.parse(target);
         
-        return (Timestamp) date;
+        return new Timestamp(date.getTime());
     }
     
     @Override
@@ -44,24 +46,23 @@ public class TimestampConverter extends AbstractDateConverter<Timestamp> {
     }
     
     @Override
-    public java.util.Date toUtilDate(Timestamp target) {
-        return new java.util.Date(target.getTime());
-    }
-    
-    @Override
-    public Date toSqlDate(Timestamp target) {
+    public Date toUtilDate(Timestamp target) {
         return new Date(target.getTime());
     }
     
     @Override
-    public Timestamp toTimeStamp(Timestamp target) {
+    public java.sql.Date toSqlDate(Timestamp target) {
+        return new java.sql.Date(target.getTime());
+    }
+    
+    @Override
+    public Timestamp toTimestamp(Timestamp target) {
         return target;
     }
     
     @Override
     public LocalDate toLocalDate(Timestamp target) {
-        return target.toLocalDateTime()
-                     .toLocalDate();
+        return target.toLocalDateTime().toLocalDate();
     }
     
     @Override
