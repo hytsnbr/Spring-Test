@@ -8,5 +8,5 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-gradle-plugin:3.1.1")
-    implementation("io.spring.gradle:dependency-management-plugin:1.1.0")
+    implementation("io.spring.gradle:dependency-management-plugin:1.1.1")
 }
