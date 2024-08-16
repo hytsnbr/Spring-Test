@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
     // Apache Commons
-    implementation("org.apache.commons:commons-lang3:3.12.0")
+    implementation("org.apache.commons:commons-lang3:3.16.0")
     implementation("org.apache.commons:commons-collections4:4.4")
 }
 
