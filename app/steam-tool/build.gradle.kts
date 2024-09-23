@@ -8,7 +8,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webflux")
 
     // Apache Velocity
-    implementation("org.apache.velocity:velocity-engine-core:2.3")
+    implementation("org.apache.velocity:velocity-engine-core:2.4")
 
     // Google Guava
     implementation("com.google.guava:guava:33.3.0-jre")
