@@ -11,7 +11,7 @@ dependencies {
     implementation("org.apache.velocity:velocity-engine-core:2.4.1")
 
     // Google Guava
-    implementation("com.google.guava:guava:33.4.0-jre")
+    implementation("com.google.guava:guava:33.4.5-jre")
 
     implementation(project(":app:base-common"))
 }
